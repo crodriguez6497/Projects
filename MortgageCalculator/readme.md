@@ -1,2 +1,1 @@
-![Calculator](Images/MortgageCalculator1.png)
-![Amortization Schedule](Images/MortgageCalculator2.png)
+![Calculator](Images/MortgageCalculator1.png) ![Amortization Schedule](Images/MortgageCalculator2.png)
