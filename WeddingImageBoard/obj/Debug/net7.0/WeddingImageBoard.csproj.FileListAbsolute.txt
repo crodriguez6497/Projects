@@ -820,7 +820,6 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\stat
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\scopedcss\bundle\WeddingImageBoard.styles.css
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\scopedcss\projectbundle\WeddingImageBoard.bundle.scp.css
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\service-worker\service-worker.js

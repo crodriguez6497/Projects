@@ -49,31 +49,31 @@
       "url": "css\/open-iconic\/README.md"
     },
     {
-      "hash": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
-      "url": "favicon.png"
-    },
-    {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
-      "url": "icon-192.png"
-    },
-    {
-      "hash": "sha256-oEo6d+KqX5fjxTiZk\/w9NB3Mi0+ycS5yLwCKwr4IkbA=",
-      "url": "icon-512.png"
+      "hash": "sha256-6dIaXK7KLuvS994YHOss+SWNZ8dZZxmSjXLhD9KkYWs=",
+      "url": "fonts\/cochocibscriptlatinpro.ttf"
     },
     {
       "hash": "sha256-s+b6lQ2iD4\/wYGLLsp4Zgl0hwCbe21K9CVuMzjgeaeA=",
       "url": "index.html"
     },
     {
+      "hash": "sha256-47DEQpj8HBSa+\/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "url": "index.html.__projection.g.js"
+    },
+    {
       "hash": "sha256-aASmGrBqVPjxpLycu+dPZP20kwvrIDxoPzsyU+kXkm8=",
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-enKgCMkYmCpfEcmg6Annbmc40VZ\/A6aYYSQjZfVn2cU=",
-      "url": "sample-data\/weather.json"
+      "hash": "sha256-n9MmbJc9hQzG6Vd+8pKIgVZCG+6cbSU2Od1o9NQiU6M=",
+      "url": "pictures\/4.png"
     },
     {
-      "hash": "sha256-HPdHnyI8I6tamri+78VDYROA6x\/yjmtpHMXWevOVGxM=",
+      "hash": "sha256-YZwh9VM52gZs1MoE\/po\/XKdtAhAiwEe8hybWzTi47JI=",
+      "url": "pictures\/backgroundimage.jpg"
+    },
+    {
+      "hash": "sha256-og7kYH50JHAM6WlVwxcM1z32ZTrMPoMHhaDlKwSCztg=",
       "url": "WeddingImageBoard.styles.css"
     },
     {
@@ -869,11 +869,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-onuqGFUqhUR4vR2dQKPh2h07DPlfz8HDw5qPvxUGYek=",
+      "hash": "sha256-1sTNRdzs57dFTre+qhno9l9bq3bYD8zYUdaJY12k8Nc=",
       "url": "_framework\/WeddingImageBoard.dll"
     },
     {
-      "hash": "sha256-8R7G7576\/BPKToniVSepych6cFrpflnOe6Vxp3A1YHU=",
+      "hash": "sha256-Mx7crTq3osYvLLq8T7JL9fTHqNDfzxt2JhbeTF\/vgOA=",
       "url": "_framework\/WeddingImageBoard.pdb"
     },
     {
@@ -881,9 +881,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-4kd+T0I2hbL6EbasKXEjogjNUYE7kUtAyg8f2+VqNK4=",
+      "hash": "sha256-JM6LF+7O\/Ouchlp9WAZVCXXoMsVvjKByFtuKjca63gY=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "FYxvVDxv"
+  "version": "9udSp3Ar"
 };

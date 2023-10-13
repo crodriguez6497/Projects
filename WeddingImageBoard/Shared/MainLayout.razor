@@ -1,17 +1,46 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<div class="main-container">
+    <div class="header-container">
+        <h1>Welcome to the wedding of Mr. & Mrs. Rodriguez</h1>
+        <button class="button" @onclick="UploadPhoto">Upload Photos</button>
+        <div class="background-image">
+            <!-- This is where the pretty picture will be placed as a background -->
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </div>
 </div>
+
+<div class="gallery-container">
+    @* This is just a mockup of two photos. In reality, you'd iterate through your uploaded photos and display them here. *@
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name1</p>
+    </div>
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name2</p>
+    </div>
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name3</p>
+    </div>
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name4</p>
+    </div>
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name5</p>
+    </div>
+    <div class="photo">
+        <img src="./pictures/4.png" alt="Name" />
+        <p>Name6</p>
+    </div>
+</div>
+
+@code {
+    private void UploadPhoto()
+    {
+        // Logic for uploading photos
+    }
+}
