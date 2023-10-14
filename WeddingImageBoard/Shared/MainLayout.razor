@@ -1,20 +1,20 @@
 ﻿@using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
+@using Microsoft.AspNetCore.Components.Forms;
 @using System;
 @using System.Collections.Generic;
 @using System.IO;
 @using System.Threading.Tasks;
 @inherits LayoutComponentBase
 
-<!-- Define a flag to show/hide the upload popup -->
 @if (showUploadPopup)
 {
     <div class="upload-popup">
         <h3>Upload Photo</h3>
         <label for="photoName">Name:</label>
         <input id="photoName" type="text" @bind="photoName" />
-        <InputFile accept="image/*" OnChange="HandleFileSelected"></InputFile>
-        <button @onclick="UploadPhotoAsync">Upload</button>
+        <InputFile accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
+        <button @onclick="UploadButtonClicked">Upload</button>
         <button @onclick="CloseUploadPopup">Cancel</button>
     </div>
 }
@@ -38,21 +38,16 @@
     {
         <div class="photo">
             <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" />
-            <p>@blobWithMetadata.BlobItem.Name</p>
-
-            <!-- Display metadata key-value pairs -->
-            <ul>
-                @foreach (var metadata in blobWithMetadata.Metadata)
-                {
-                    <li>@metadata.Key: @metadata.Value</li>
-                }
-            </ul>
+            @foreach (var metadata in blobWithMetadata.Metadata)
+            {
+                @metadata.Value
+            }
         </div>
     }
 </div>
 
 @code {
-    private const string StorageConnectionString = "YOUR_CONNECTION_STRING"; // Replace with your connection string
+    private const string StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=weddingphotoscr;AccountKey=iakIFfhS+c/FeR4Ey5eohZM9yvzDWAWV4JgloUqDbETZBq9Cuacclg4x/t8FuUBnkJjuLUiuk622+ASttzw2Pg==;EndpointSuffix=core.windows.net"; // Replace with your connection string
     private ElementReference inputFile;  // Reference to the InputFile component
     private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
     private bool showUploadPopup = false;
@@ -73,22 +68,20 @@
 
     private async Task HandleFileSelected(InputFileChangeEventArgs args)
     {
-        await UploadPhotoAsync(args);
+        await UploadPhotosAsync(args);
         await LoadBlobItems();
     }
 
-    private async Task UploadPhotoAsync(InputFileChangeEventArgs e)
+    private async Task UploadPhotosAsync(InputFileChangeEventArgs e)
     {
         var files = e.GetMultipleFiles();
+        BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
+        BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainer");
 
         foreach (var file in files)
         {
             var buffer = new byte[file.Size];
             await file.OpenReadStream().ReadAsync(buffer);
-
-            BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
-            string containerName = "weddingphotoscontainer";
-            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
             string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
@@ -98,8 +91,23 @@
                 await blobClient.UploadAsync(stream, true);
             }
 
+            // Store the entered name as metadata
+            var metadata = new Dictionary<string, string>
+            {
+                {"Name", photoName}
+            };
+            await blobClient.SetMetadataAsync(metadata);
+
             Console.WriteLine("Upload successful");
         }
+    }
+
+
+    private async Task UploadButtonClicked()
+    {
+        // You might want to consider moving the upload logic here if you want the upload to start when the 'Upload' button is clicked.
+        // For now, this just logs the button click event.
+        Console.WriteLine("Upload button clicked.");
     }
 
     private async Task LoadBlobItems()
@@ -117,9 +125,13 @@
             blobItems.Add(new BlobWithMetadata
                 {
                     BlobItem = blobItem,
-                    Metadata = properties.Metadata
+                    Metadata = properties.Metadata,
+                    CreationTime = properties.CreatedOn  // Adding this to store creation time
                 });
         }
+
+        // Sort blob items by creation time
+        blobItems = blobItems.OrderByDescending(b => b.CreationTime).ToList();
     }
 
     private string GetBlobUri(string blobName)
@@ -132,6 +144,7 @@
     {
         public BlobItem BlobItem { get; set; }
         public IDictionary<string, string> Metadata { get; set; }
+        public DateTimeOffset? CreationTime { get; set; } // Adding this to store creation time
     }
 
     protected override async Task OnInitializedAsync()
