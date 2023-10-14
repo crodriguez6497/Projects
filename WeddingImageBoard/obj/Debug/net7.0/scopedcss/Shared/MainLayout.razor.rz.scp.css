@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Cochocib Script Latin Pro';
-    src: url('./fonts/cochocibscriptlatinpro.ttf') format('ttf');
+    font-family: 'Breezeblocks';
+    src: url('./fonts/Breezeblocks.ttf') format('truetype'), url('./fonts/MyOpenTypeFont.otf') format('opentype');
 }
 
 .main-container[b-fbrgg9u8gc] {
@@ -11,7 +11,6 @@
     margin: 0 auto;
     max-width: 1200px;
     padding-bottom: 0px;
-    font-family: 'Cochocib Script Latin Pro';
 }
 
 .header-container[b-fbrgg9u8gc] {
@@ -26,7 +25,21 @@
     justify-content: center;
     border-radius: 15px;
     overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
 }
+
+    .header-container h1[b-fbrgg9u8gc],
+    .header-container h2[b-fbrgg9u8gc] {
+        font-family: 'Breezeblocks';
+        font-size: 6em;
+        white-space: nowrap;
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
 
 .background-image[b-fbrgg9u8gc] {
     position: absolute;
@@ -36,9 +49,9 @@
     bottom: 0;
     z-index: -1;
     background: url('./pictures/backgroundimage.jpg') no-repeat center center;
-    background-position: center center;
-    background-size: auto 1000px;
+    background-size: cover;
 }
+
 
 .button[b-fbrgg9u8gc] {
     padding: 10px 20px;
@@ -47,12 +60,14 @@
     border: 1px solid white;
     color: white;
     cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 90%;
 }
 
-.button:hover[b-fbrgg9u8gc] {
-    background-color: rgba(51, 51, 51, 1);
-    transition: background-color 0.3s ease;
-}
+    .button:hover[b-fbrgg9u8gc] {
+        background-color: rgba(51, 51, 51, 1);
+        transition: background-color 0.3s ease;
+    }
 
 .gallery-container[b-fbrgg9u8gc] {
     flex-direction: column;
@@ -85,3 +100,15 @@
         font-size: 1vw;
         color: white;
     }
+
+@media screen and (max-width: 768px) {
+    .header-container[b-fbrgg9u8gc] {
+        padding: 50px;
+        height: auto;
+    }
+
+    .header-container h1[b-fbrgg9u8gc],
+    .header-container h2[b-fbrgg9u8gc] {
+        font-size: 3em;
+    }
+}

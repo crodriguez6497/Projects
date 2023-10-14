@@ -69,8 +69,12 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\cochocibscriptlatinpro.ttf",
-      "PackagePath": "staticwebassets\\fonts\\cochocibscriptlatinpro.ttf"
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Breezeblocks.ttf"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\cochocib.ttf",
+      "PackagePath": "staticwebassets\\fonts\\cochocib.ttf"
     },
     {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iD3I8snWiKdhWtzy10BgCQclAtw/8e7Hi6/0NZSkcMU=",
+  "Hash": "uP3BXfOhxwyMlqv69rPELIYt4H/+ldd1eYk2wSalzRk=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -7174,12 +7174,12 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\cochocibscriptlatinpro.ttf",
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.ttf",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "fonts/cochocibscriptlatinpro.ttf",
+      "RelativePath": "fonts/Breezeblocks.ttf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7188,7 +7188,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\cochocibscriptlatinpro.ttf"
+      "OriginalItemSpec": "wwwroot\\fonts\\Breezeblocks.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\cochocib.ttf",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "fonts/cochocib.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\cochocib.ttf"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",

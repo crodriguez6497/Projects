@@ -49,8 +49,12 @@
       "url": "css\/open-iconic\/README.md"
     },
     {
+      "hash": "sha256-3V1Mqf63nFIbz4KH+kRT43Hj4TnGUUphfaEEllJNhng=",
+      "url": "fonts\/Breezeblocks.ttf"
+    },
+    {
       "hash": "sha256-6dIaXK7KLuvS994YHOss+SWNZ8dZZxmSjXLhD9KkYWs=",
-      "url": "fonts\/cochocibscriptlatinpro.ttf"
+      "url": "fonts\/cochocib.ttf"
     },
     {
       "hash": "sha256-s+b6lQ2iD4\/wYGLLsp4Zgl0hwCbe21K9CVuMzjgeaeA=",
@@ -73,7 +77,7 @@
       "url": "pictures\/backgroundimage.jpg"
     },
     {
-      "hash": "sha256-og7kYH50JHAM6WlVwxcM1z32ZTrMPoMHhaDlKwSCztg=",
+      "hash": "sha256-iMQF+\/kf0LVGdAsM59zc4\/hYHqOCA2oHFsjrFUbyFbM=",
       "url": "WeddingImageBoard.styles.css"
     },
     {
@@ -869,11 +873,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-1sTNRdzs57dFTre+qhno9l9bq3bYD8zYUdaJY12k8Nc=",
+      "hash": "sha256-Gr2tBdKzra6q5eq60URCtHLDFw9fMbdysfdkwM2xhtc=",
       "url": "_framework\/WeddingImageBoard.dll"
     },
     {
-      "hash": "sha256-Mx7crTq3osYvLLq8T7JL9fTHqNDfzxt2JhbeTF\/vgOA=",
+      "hash": "sha256-s\/VlR3Oy2CijjL6lmGxOqzUCgOR1Q89bP\/BpzLel3uE=",
       "url": "_framework\/WeddingImageBoard.pdb"
     },
     {
@@ -881,9 +885,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-JM6LF+7O\/Ouchlp9WAZVCXXoMsVvjKByFtuKjca63gY=",
+      "hash": "sha256-iUmZvJfyYGHhhndscS4jFr2a4XCro9mumvuYlaKY1og=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "9udSp3Ar"
+  "version": "3YBoG0b3"
 };
