@@ -54,7 +54,8 @@
 }
 
 
-.button[b-fbrgg9u8gc] {
+.custom-button[b-fbrgg9u8gc] {
+    display: inline-block;
     padding: 10px 20px;
     border-radius: 20px;
     background-color: rgba(51, 51, 51, 0.4);
@@ -63,11 +64,16 @@
     cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 90%;
+    text-align: center;
 }
 
-    .button:hover[b-fbrgg9u8gc] {
+    .custom-button:hover[b-fbrgg9u8gc] {
         background-color: rgba(51, 51, 51, 1);
         transition: background-color 0.3s ease;
+    }
+
+    .custom-button input[type="file"][b-fbrgg9u8gc] {
+        display: none;
     }
 
 .gallery-container[b-fbrgg9u8gc] {

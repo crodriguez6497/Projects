@@ -1,10 +1,32 @@
-﻿@inherits LayoutComponentBase
+﻿@using Azure.Storage.Blobs;
+@using Azure.Storage.Blobs.Models;
+@using System;
+@using System.Collections.Generic;
+@using System.IO;
+@using System.Threading.Tasks;
+@inherits LayoutComponentBase
+
+<!-- Define a flag to show/hide the upload popup -->
+@if (showUploadPopup)
+{
+    <div class="upload-popup">
+        <h3>Upload Photo</h3>
+        <label for="photoName">Name:</label>
+        <input id="photoName" type="text" @bind="photoName" />
+        <InputFile accept="image/*" OnChange="HandleFileSelected"></InputFile>
+        <button @onclick="UploadPhotoAsync">Upload</button>
+        <button @onclick="CloseUploadPopup">Cancel</button>
+    </div>
+}
 
 <div class="main-container">
     <div class="header-container">
         <h1>Welcome to the wedding of</h1>
-         <h2>Mr. & Mrs. Rodriguez</h2>
-        <button class="button" @onclick="UploadPhoto">Upload Photos</button>
+        <h2>Mr. & Mrs. Rodriguez</h2>
+
+        <!-- Show the upload popup when the button is clicked -->
+        <button class="custom-button" @onclick="ShowUploadPopup">Upload Photos</button>
+
         <div class="background-image">
             <!-- This is where the pretty picture will be placed as a background -->
         </div>
@@ -12,36 +34,108 @@
 </div>
 
 <div class="gallery-container">
-    @* This is just a mockup of two photos. In reality, you'd iterate through your uploaded photos and display them here. *@
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name1</p>
-    </div>
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name2</p>
-    </div>
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name3</p>
-    </div>
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name4</p>
-    </div>
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name5</p>
-    </div>
-    <div class="photo">
-        <img src="./pictures/4.png" alt="Name" />
-        <p>Name6</p>
-    </div>
+    @foreach (var blobWithMetadata in blobItems)
+    {
+        <div class="photo">
+            <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" />
+            <p>@blobWithMetadata.BlobItem.Name</p>
+
+            <!-- Display metadata key-value pairs -->
+            <ul>
+                @foreach (var metadata in blobWithMetadata.Metadata)
+                {
+                    <li>@metadata.Key: @metadata.Value</li>
+                }
+            </ul>
+        </div>
+    }
 </div>
 
 @code {
-    private void UploadPhoto()
+    private const string StorageConnectionString = "YOUR_CONNECTION_STRING"; // Replace with your connection string
+    private ElementReference inputFile;  // Reference to the InputFile component
+    private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
+    private bool showUploadPopup = false;
+    private string photoName = "";
+
+    // Show the upload popup
+    private void ShowUploadPopup()
     {
-        // Logic for uploading photos
+        showUploadPopup = true;
+    }
+
+    // Close the upload popup
+    private void CloseUploadPopup()
+    {
+        showUploadPopup = false;
+        photoName = ""; // Clear the input field
+    }
+
+    private async Task HandleFileSelected(InputFileChangeEventArgs args)
+    {
+        await UploadPhotoAsync(args);
+        await LoadBlobItems();
+    }
+
+    private async Task UploadPhotoAsync(InputFileChangeEventArgs e)
+    {
+        var files = e.GetMultipleFiles();
+
+        foreach (var file in files)
+        {
+            var buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer);
+
+            BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
+            string containerName = "weddingphotoscontainer";
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+
+            string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
+
+            using (var stream = new MemoryStream(buffer))
+            {
+                await blobClient.UploadAsync(stream, true);
+            }
+
+            Console.WriteLine("Upload successful");
+        }
+    }
+
+    private async Task LoadBlobItems()
+    {
+        BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
+        string containerName = "weddingphotoscontainer";
+        BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+
+        blobItems.Clear();
+        await foreach (BlobItem blobItem in containerClient.GetBlobsAsync())
+        {
+            BlobClient blobClient = containerClient.GetBlobClient(blobItem.Name);
+            BlobProperties properties = await blobClient.GetPropertiesAsync();
+
+            blobItems.Add(new BlobWithMetadata
+                {
+                    BlobItem = blobItem,
+                    Metadata = properties.Metadata
+                });
+        }
+    }
+
+    private string GetBlobUri(string blobName)
+    {
+        string containerUri = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainer/";
+        return containerUri + blobName;
+    }
+
+    public class BlobWithMetadata
+    {
+        public BlobItem BlobItem { get; set; }
+        public IDictionary<string, string> Metadata { get; set; }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadBlobItems();
     }
 }
