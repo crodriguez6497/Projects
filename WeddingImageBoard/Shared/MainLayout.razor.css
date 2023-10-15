@@ -3,14 +3,35 @@
     src: url('./fonts/Breezeblocks.ttf') format('truetype'), url('./fonts/MyOpenTypeFont.otf') format('opentype');
 }
 
+/* .background-col {
+    background-color: black;
+} */
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.full-screen-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 20px;
     width: 100%;
     margin: 0 auto;
     max-width: 1200px;
-    padding-bottom: 0px;
 }
 
 .header-container {
@@ -32,13 +53,9 @@
     .header-container h1,
     .header-container h2 {
         font-family: 'Breezeblocks';
-        font-size: 6em;
-        white-space: nowrap;
-        max-width: 100%;
+        font-size: 5em;
         text-align: center;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
+        margin: 10px 0;
     }
 
 .background-image {
@@ -54,67 +71,171 @@
 
 
 .custom-button {
-    display: inline-block;
     padding: 10px 20px;
     border-radius: 20px;
-    background-color: rgba(51, 51, 51, 0.4);
+    background-color: rgba(51, 51, 51, 0.6);
     border: 1px solid white;
     color: white;
     cursor: pointer;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
     .custom-button:hover {
         background-color: rgba(51, 51, 51, 1);
-        transition: background-color 0.3s ease;
     }
 
-    .custom-button input[type="file"] {
+    .custom-button input-file-hidden {
         display: none;
+        z-index: -1000;
     }
+
 
 .gallery-container {
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 20px;
-    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    background-color: aliceblue;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f5f5f5;
 }
 
-.photo {
+
+    .gallery-container .text-content {
+        color: #333;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Lobster';
+    }
+
+.photo img {
+    width: 100%;
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.photo p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    font-size: 1vw;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.upload-popup {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    background-color: rgba(255, 255, 255);
+    border: 2px dashed grey;
+    padding: 80px 40px 40px;
+    width: 75%;
+    height: 60%;
+    border-radius: 10px;
     position: relative;
 }
 
-    .photo img {
-        width: 100%;
-        border-radius: 10px;
-        vertical-align: top;
+    .upload-popup::before {
+        margin-top: 5%;
+        content: '';
+        background: url('./pictures/upload.png') no-repeat center top;
+        background-size: contain;
+        width: 120px; /* Adjusted width */
+        height: 120px; /* Adjusted height */
+        display: block;
+        position: absolute;
+        top: -60px; /* Adjusted top value */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .photo p {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin: 0;
-        padding: 5px;
-        font-size: 1vw;
-        color: white;
+.drag-text {
+    font-size: 34px; /* Increased font size */
+    margin-bottom: 20px; /* Adjusted margin */
+    color: grey;
+}
+
+.or-text {
+    margin: 20px 0; /* Adjusted margin */
+    font-size: 26px; /* Increased font size */
+    text-align: center;
+    color: grey;
+}
+
+.custom-file-upload {
+    padding: 15px 25px;
+    cursor: pointer;
+    border: 2px solid #007BFF;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #007BFF;
+}
+
+button {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 2px solid #007BFF; /* Matched the border from .custom-file-upload */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Ensure text is centered */
+    width: 40%; /* Full width to match .custom-file-upload */
+    font-size: 18px; /* Matched the font size from .custom-file-upload */
+    border-radius: 5px; /* Matched the border radius from .custom-file-upload */
+    color: #007BFF; /* Matched the text color from .custom-file-upload */
+}
+
+    button:hover {
+        background-color: #e5e5e5; /* You can adjust the hover color if needed */
+    }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: #e5e5e5;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+    .close-btn:hover {
+        background-color: #c5c5c5;
     }
 
 @media screen and (max-width: 768px) {
-    .header-container {
+    .upload-popup {
         padding: 50px;
         height: auto;
     }
 
-    .header-container h1,
-    .header-container h2 {
-        font-size: 3em;
+.upload-popup::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+}
+    .photo img {
+        height:75%; /* Adjust height for mobile */
+    }
+
+
+    .drag-text,
+    .or-text {
+        font-size: 24px;
+    }
+
+    .custom-file-upload {
+        font-size: 18px;
     }
 }

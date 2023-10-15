@@ -9,16 +9,27 @@
 
 @if (showUploadPopup)
 {
+    <div class="full-screen-flex">
     <div class="upload-popup">
-        <h3>Upload Photo</h3>
         <label for="photoName">Name:</label>
         <input id="photoName" type="text" @bind="photoName" />
-        <InputFile accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
+
+        <div class="file-upload">
+            <span class="drag-text">Drag & Drop files here</span>
+            <div class="or-text">or</div>
+
+            <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
+            <InputFile id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
+        </div>
+
         <button @onclick="UploadButtonClicked">Upload</button>
-        <button @onclick="CloseUploadPopup">Cancel</button>
+        <div class="close-btn" @onclick="CloseUploadPopup">X</div>
     </div>
+</div>
 }
 
+
+<p class="background-col">
 <div class="main-container">
     <div class="header-container">
         <h1>Welcome to the wedding of</h1>
@@ -40,11 +51,12 @@
             <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" />
             @foreach (var metadata in blobWithMetadata.Metadata)
             {
-                @metadata.Value
+                <div class="text-content">@metadata.Value</div>
             }
         </div>
     }
 </div>
+</p class="background-col">
 
 @code {
     private const string StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=weddingphotoscr;AccountKey=iakIFfhS+c/FeR4Ey5eohZM9yvzDWAWV4JgloUqDbETZBq9Cuacclg4x/t8FuUBnkJjuLUiuk622+ASttzw2Pg==;EndpointSuffix=core.windows.net"; // Replace with your connection string
