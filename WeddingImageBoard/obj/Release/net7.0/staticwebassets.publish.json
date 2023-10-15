@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fWtXXy8xqwpYJUsE2Lo2J8VnXlP+WgvCJgSbNb+RcJc=",
+  "Hash": "9Syq9Lzxvof7u4Y6ufAjlys5RA7+lAldsxBYmlTYNTc=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -7240,23 +7240,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manifest.json"
-    },
-    {
-      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\4.png",
-      "SourceId": "WeddingImageBoard",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "pictures/4.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pictures\\4.png"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\backgroundimage.jpg",

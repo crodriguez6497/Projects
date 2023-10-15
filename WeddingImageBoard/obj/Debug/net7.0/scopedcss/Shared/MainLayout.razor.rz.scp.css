@@ -335,13 +335,13 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 @media only screen and (max-width: 480px) {
     .image-popup-content[b-fbrgg9u8gc] {
         padding: 10px;
-        width: 95vw; /* Increase to 95% of the viewport width for small devices */
-        height: auto; /*95vh;  Increase to 95% of the viewport height for small devices */
+        width: 95vw;
+        height: auto;
     }
 
         .image-popup-content img[b-fbrgg9u8gc] {
-            width: 100%; /* Use the full width available */
-            height: auto; /* Keep the aspect ratio */
+            width: 100%;
+            height: auto;
         }
 }
 
@@ -413,6 +413,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
         padding: 15px;
         width: 92vw;
         height: auto;
+        max-height: 90vh;
     }
 
         .image-popup-content img[b-fbrgg9u8gc] {

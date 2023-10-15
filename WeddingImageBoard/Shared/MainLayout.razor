@@ -14,12 +14,12 @@
 <!--Add a loading bar to the image upload and a complete message when the photos are uploaded. followed by closing the upload popup-->
 
 @if (showUploadPopup) {
-    <div class="full-screen-flex" @onclick="CloseUploadPopup">
-        <div class="upload-popup" @onclick="CloseUploadPopup">
+    <div class="full-screen-flex">
+        <div class="upload-popup">
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
 
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
-            <InputFile @ref="inputFile" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
+            <InputFile @ref="inputFile" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="100000000" OnChange="HandleFileSelected"></InputFile>
             <div class="upload-progress-container" style="@(showProgressBar ? "display:block;" : "display:none;")">
                 <div class="upload-progress" style="width:@(progressPercentage + "%")"></div>
             </div>
@@ -32,7 +32,7 @@
 }
 
 @if (showImagePopup) {
-    <div class="image-popup open" @onclick="CloseImagePopup">
+    <div class="image-popup open">
         <div class="image-popup-content">
              <span class="image-close" @onclick="CloseImagePopup">×</span>
             <img src="@popupImageUrl" alt="Full-sized Image" />
@@ -166,7 +166,7 @@
         foreach (var file in files)
         {
             var buffer = new byte[file.Size];
-            await file.OpenReadStream().ReadAsync(buffer);
+            await file.OpenReadStream(maxAllowedSize: 1024 * 500000).ReadAsync(buffer);
 
             string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
