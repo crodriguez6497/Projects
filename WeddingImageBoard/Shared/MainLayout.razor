@@ -1,32 +1,29 @@
 ﻿@using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
 @using Microsoft.AspNetCore.Components.Forms;
-@using System;
 @using System.Collections.Generic;
 @using System.IO;
+@using System.Linq;
 @using System.Threading.Tasks;
+@inject IJSRuntime JSRuntime
 @inherits LayoutComponentBase
 
 @if (showUploadPopup)
 {
     <div class="full-screen-flex">
-    <div class="upload-popup">
-        <label for="photoName">Name:</label>
-        <input id="photoName" type="text" @bind="photoName" />
+        <div class="upload-popup">
+            <label for="photoName">Please enter your name:</label>
+            <input id="photoName" type="text" @bind="photoName" />
 
-        <div class="file-upload">
-            <span class="drag-text">Drag & Drop files here</span>
-            <div class="or-text">or</div>
+            <InputFile @ref="inputFile" OnChange="HandleFileSelected" multiple class="file-upload-button" id="blazorFileInput" />
+            <label for="blazorFileInput">Choose File</label> <!-- Custom file upload button -->
 
-            <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
-            <InputFile id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
+            <div class="close-btn" @onclick="CloseUploadPopup">X</div>
         </div>
-
-        <button @onclick="UploadButtonClicked">Upload</button>
-        <div class="close-btn" @onclick="CloseUploadPopup">X</div>
     </div>
-</div>
 }
+
+
 
 
 <div class="main-container">
@@ -58,7 +55,7 @@
 
 @code {
     private const string StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=weddingphotoscr;AccountKey=iakIFfhS+c/FeR4Ey5eohZM9yvzDWAWV4JgloUqDbETZBq9Cuacclg4x/t8FuUBnkJjuLUiuk622+ASttzw2Pg==;EndpointSuffix=core.windows.net"; // Replace with your connection string
-    private ElementReference inputFile;  // Reference to the InputFile component
+    private InputFile inputFile;  // Reference to the InputFile component
     private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
     private bool showUploadPopup = false;
     private string photoName = "";
@@ -73,18 +70,28 @@
     private void CloseUploadPopup()
     {
         showUploadPopup = false;
-        photoName = ""; // Clear the input field
+        photoName = "";
     }
 
-    private async Task HandleFileSelected(InputFileChangeEventArgs args)
+
+    private async Task TriggerFileInput()
     {
-        await UploadPhotosAsync(args);
+        await JSRuntime.InvokeVoidAsync("triggerFilePicker");
+    }
+
+    // Handle the selected files
+    private async Task HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        var files = e.GetMultipleFiles().ToList();
+        await UploadPhotosAsync(files);
+        CloseUploadPopup();
         await LoadBlobItems();
     }
 
-    private async Task UploadPhotosAsync(InputFileChangeEventArgs e)
+
+    private async Task UploadPhotosAsync(List<IBrowserFile> files)
+
     {
-        var files = e.GetMultipleFiles();
         BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
         BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainer");
 
@@ -110,14 +117,6 @@
 
             Console.WriteLine("Upload successful");
         }
-    }
-
-
-    private async Task UploadButtonClicked()
-    {
-        // You might want to consider moving the upload logic here if you want the upload to start when the 'Upload' button is clicked.
-        // For now, this just logs the button click event.
-        Console.WriteLine("Upload button clicked.");
     }
 
     private async Task LoadBlobItems()
@@ -154,7 +153,7 @@
     {
         public BlobItem BlobItem { get; set; }
         public IDictionary<string, string> Metadata { get; set; }
-        public DateTimeOffset? CreationTime { get; set; } // Adding this to store creation time
+        public DateTimeOffset? CreationTime { get; set; }
     }
 
     protected override async Task OnInitializedAsync()

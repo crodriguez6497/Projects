@@ -3,10 +3,6 @@
     src: url('./fonts/Breezeblocks.ttf') format('truetype'), url('./fonts/MyOpenTypeFont.otf') format('opentype');
 }
 
-/* .background-col {
-    background-color: black;
-} */
-
 body, html {
     height: 100%;
     margin: 0;
@@ -35,6 +31,7 @@ body, html {
 }
 
 .header-container {
+    padding: 10% 0;
     text-align: center;
     padding: 200px;
     position: relative;
@@ -56,9 +53,10 @@ body, html {
         font-size: 5em;
         text-align: center;
         margin: 10px 0;
+
     }
 
-.background-image {
+        .background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -66,7 +64,7 @@ body, html {
     bottom: 0;
     z-index: -1;
     background: url('./pictures/backgroundimage.jpg') no-repeat center center;
-    background-size: cover;
+    background-size: 100% auto;
 }
 
 
@@ -85,36 +83,47 @@ body, html {
         background-color: rgba(51, 51, 51, 1);
     }
 
-    .custom-button input-file-hidden {
-        display: none;
-        z-index: -1000;
-    }
+.input-file-hidden {
+    display: none;
+}
 
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px; /* Match the max-width of .main-container */
     background-color: #f5f5f5;
 }
 
 
-    .gallery-container .text-content {
-        color: #333;
-        font-size: 18px;
-        text-align: center;
-        font-family: 'Lobster';
-    }
 
-.photo img {
-    width: 100%;
-    border-radius: 10px;
-    height: 300px;
-    object-fit: cover;
+.text-content {
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Lobster';
 }
+
+.photo {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* This ensures a 1:1 aspect ratio (square) */
+    position: relative; /* Necessary for positioning the inner image */
+}
+
+    .photo img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures that images cover the div without distortion */
+        border-radius: 15px;
+    }
 
 .photo p {
     position: absolute;
@@ -134,8 +143,8 @@ body, html {
     background-color: rgba(255, 255, 255);
     border: 2px dashed grey;
     padding: 80px 40px 40px;
-    width: 75%;
-    height: 60%;
+    width: 60%;
+    height: 40%;
     border-radius: 10px;
     position: relative;
 }
@@ -154,47 +163,37 @@ body, html {
         transform: translateX(-50%);
     }
 
+.file-upload-button {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+    .file-upload-button + label {
+        padding: 10px 15px;
+        background-color: #808080;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
 .drag-text {
-    font-size: 34px; /* Increased font size */
-    margin-bottom: 20px; /* Adjusted margin */
+    font-size: 34px;
+    margin-bottom: 20px;
     color: grey;
 }
 
 .or-text {
-    margin: 20px 0; /* Adjusted margin */
-    font-size: 26px; /* Increased font size */
+    margin: 20px 0;
+    font-size: 26px;
     text-align: center;
     color: grey;
 }
 
-.custom-file-upload {
-    padding: 15px 25px;
-    cursor: pointer;
-    border: 2px solid #007BFF;
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    border-radius: 5px;
-    color: #007BFF;
-}
 
-button {
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    border: 2px solid #007BFF; /* Matched the border from .custom-file-upload */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Ensure text is centered */
-    width: 40%; /* Full width to match .custom-file-upload */
-    font-size: 18px; /* Matched the font size from .custom-file-upload */
-    border-radius: 5px; /* Matched the border radius from .custom-file-upload */
-    color: #007BFF; /* Matched the text color from .custom-file-upload */
-}
-
-    button:hover {
-        background-color: #e5e5e5; /* You can adjust the hover color if needed */
-    }
 
 .close-btn {
     position: absolute;
@@ -217,29 +216,40 @@ button {
 
 @media screen and (max-width: 768px) {
     .main-container {
-        padding: 20px 10px; /* reduce side padding */
+        padding: 10px 10px;
     }
+
+    .header-container {
+        padding: 15% 0;
+        height: 300px;
+    }
+
+        .header-container h1 {
+            margin-top: 15%;
+            margin-bottom: -2%;
+        }
 
     .header-container h1,
     .header-container h2 {
-        font-size: 3em; /* reduce font size for header texts */
+        font-size: 3.5em;
+    }
+
+    .background-image {
+        background-size: cover;
     }
 
     .gallery-container {
-        grid-template-columns: repeat(3, 1fr); /* Display 2 images per row */
-        gap: 15px; /* Increase gap between images */
-        justify-content: center; /* Center the grid */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-content: center;
     }
     .custom-button {
+        margin-top: 10%;
         padding: 10px 20px;
         font-size: 16px;
         text-align: center;
         display: inline-block;
         width: auto;
-        margin: 10px;
-    }
-        .photo img {
-        height: 80%;
     }
 
     .upload-popup {
@@ -247,18 +257,18 @@ button {
         height: auto;
     }
 
-        .upload-popup::before {
-            width: 100px;
-            height: 100px;
-            top: -50px;
-        }
+    .upload-popup::before {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+    }
 
     .drag-text,
     .or-text {
         font-size: 24px;
     }
-
-    .custom-file-upload {
-        font-size: 18px;
+    .file-upload-button + label {
+        padding: 8px 12px;
+        font-size: 14px;
     }
 }
