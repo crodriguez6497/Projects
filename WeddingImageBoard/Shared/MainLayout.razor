@@ -5,22 +5,37 @@
 @using System.Collections.Generic;
 @using System.IO;
 @using System.Linq;
+@using System.Threading
 @using System.Threading.Tasks;
 @using Microsoft.Extensions.Configuration;
 @inject IConfiguration config
 @inject IJSRuntime JSRuntime
 @inherits LayoutComponentBase
+<!--Add a loading bar to the image upload and a complete message when the photos are uploaded. followed by closing the upload popup-->
 
-@if (showUploadPopup)
-{
+@if (showUploadPopup) {
     <div class="full-screen-flex">
         <div class="upload-popup">
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
 
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
             <InputFile @ref="inputFile" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="102400" OnChange="HandleFileSelected"></InputFile>
-
+            <div class="upload-progress-container" style="@(showProgressBar ? "display:block;" : "display:none;")">
+                <div class="upload-progress" style="width:@(progressPercentage + "%")"></div>
+            </div>
+            <div class="upload-success-message" style="@(showSuccessMessage ? "display:block;" : "display:none;")">
+                Upload Successful!
+            </div>
             <div class="close-btn" @onclick="CloseUploadPopup">X</div>
+        </div>
+    </div>
+}
+
+@if (showImagePopup) {
+    <div class="image-popup open" @onclick="CloseImagePopup">
+        <div class="image-popup-content">
+            <span class="image-close" @onclick="CloseImagePopup">×</span>
+            <img src="@popupImageUrl" alt="Full-sized Image" />
         </div>
     </div>
 }
@@ -49,7 +64,7 @@
     @foreach (var blobWithMetadata in blobItems)
     {
         <div class="photo">
-            <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" />
+            <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))"/>
             @foreach (var metadata in blobWithMetadata.Metadata)
             {
                 <div class="text-content">@metadata.Value</div>
@@ -76,10 +91,27 @@
     //     }
     // }
 
+    private bool showProgressBar = false;
+    private bool showSuccessMessage = false;
+    private int progressPercentage = 0;
+
     private InputFile inputFile;  // Reference to the InputFile component
     private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
     private bool showUploadPopup = false;
     private string photoName = "";
+    private string popupImageUrl = null;
+    private bool showImagePopup = false;
+
+    private void OpenImagePopup(string imageUrl)
+    {
+        popupImageUrl = imageUrl;
+        showImagePopup = true;
+    }
+
+    private void CloseImagePopup()
+    {
+        showImagePopup = false;
+    }
 
     // Show the upload popup
     private void ShowUploadPopup()
@@ -92,8 +124,10 @@
     {
         showUploadPopup = false;
         photoName = "";
+        showSuccessMessage = false;
+        progressPercentage = 0;
+        StateHasChanged();
     }
-
 
     private async Task TriggerFileInput()
     {
@@ -103,18 +137,31 @@
     // Handle the selected files
     private async Task HandleFileSelected(InputFileChangeEventArgs e)
     {
+        showProgressBar = true;
+        showSuccessMessage = false;
+        StateHasChanged();  // Request a re-render
+
         var files = e.GetMultipleFiles().ToList();
         await UploadPhotosAsync(files);
+
+        showProgressBar = false;
+        showSuccessMessage = true;
+        StateHasChanged();  // Request a re-render
+        await Task.Delay(2000);
+
         CloseUploadPopup();
         await LoadBlobItems();
     }
 
 
-    private async Task UploadPhotosAsync(List<IBrowserFile> files)
 
+    private async Task UploadPhotosAsync(List<IBrowserFile> files)
     {
         BlobServiceClient blobServiceClient = new BlobServiceClient(StorageConnectionString);
         BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainer");
+
+        int totalFiles = files.Count;
+        int uploadedFiles = 0;
 
         foreach (var file in files)
         {
@@ -131,14 +178,19 @@
 
             // Store the entered name as metadata
             var metadata = new Dictionary<string, string>
-            {
-                {"Name", photoName}
-            };
+        {
+            {"Name", photoName}
+        };
             await blobClient.SetMetadataAsync(metadata);
+
+            uploadedFiles++;
+            progressPercentage = (uploadedFiles * 100) / totalFiles;
+            await JSRuntime.InvokeVoidAsync("updateProgressBar", progressPercentage);
 
             Console.WriteLine("Upload successful");
         }
     }
+
 
     private async Task LoadBlobItems()
     {

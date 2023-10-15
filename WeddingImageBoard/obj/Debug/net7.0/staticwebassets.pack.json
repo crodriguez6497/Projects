@@ -81,10 +81,6 @@
       "PackagePath": "staticwebassets\\manifest.json"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\4.png",
-      "PackagePath": "staticwebassets\\pictures\\4.png"
-    },
-    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\backgroundimage.jpg",
       "PackagePath": "staticwebassets\\pictures\\backgroundimage.jpg"
     },

@@ -5,12 +5,12 @@
 
 .background-col[b-fbrgg9u8gc] {
     background-color: #fafafa;
-    height: 100%; /* if you want the background color to cover the entire viewport height, use 100vh instead */
-    width: 100%; /* full width */
+    height: 100%;
+    width: 100%;
 }
 
 .main-container[b-fbrgg9u8gc] {
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto;
     width: 90%;
     max-width: 1200px;
     background-color: white;
@@ -44,29 +44,14 @@
     z-index: 1;
 }
 .border-line[b-fbrgg9u8gc] {
-    width: 50%; /* Adjust the width to match desired size */
-    height: 1px;
+    width: 95%;
+    height: 2px;
     background-color: #ccc;
-    margin: 0 auto; /* Center the divider */
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
-
-.tab-container[b-fbrgg9u8gc] {
-    width: 100%;
-    text-align: center; /* Change to center for centering the tab text */
-    padding: 15px 0; /* Increase padding for more spacing above and below the tab */
-}
-
-.tab[b-fbrgg9u8gc] {
-    display: inline-block;
-    text-decoration: none;
-    color: #000;
-    padding: 10px 25px; /* Increase padding for a larger clickable area */
-    margin-bottom: 10px; /* Increase spacing between tab and divider */
-    font-weight: bold;
-    border: 2px solid #ccc; /* Add border to the tab */
-    border-radius: 5px; /* Add rounded corners */
-}
-
     .header-container h1[b-fbrgg9u8gc],
     .header-container h2[b-fbrgg9u8gc] {
         font-family: 'Breezeblocks';
@@ -131,7 +116,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 
 .custom-file-upload[b-fbrgg9u8gc] {
     padding: 10px 15px;
-    background-color: rgba(51, 51, 51, 0.6); /* Change to your preferred color */
+    background-color: rgba(51, 51, 51, 0.6);
     color: white;
     border: none;
     border-radius: 4px;
@@ -177,8 +162,8 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 .photo[b-fbrgg9u8gc] {
     width: 100%;
     height: 0;
-    padding-bottom: 100%; /* This ensures a 1:1 aspect ratio (square) */
-    position: relative; /* Necessary for positioning the inner image */
+    padding-bottom: 100%;
+    position: relative;
 }
 
     .photo img[b-fbrgg9u8gc] {
@@ -187,7 +172,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* This ensures that images cover the div without distortion */
+        object-fit: cover;
 
     }
 
@@ -203,9 +188,9 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 
 .upload-popup[b-fbrgg9u8gc] {
     display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Horizontal centering */
-    justify-content: center; /* Vertical centering */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(255, 255, 255);
     border: 2px dashed grey;
     padding: 80px 40px 40px;
@@ -220,11 +205,11 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
         content: '';
         background: url('./pictures/upload.png') no-repeat center top;
         background-size: contain;
-        width: 120px; /* Adjusted width */
-        height: 120px; /* Adjusted height */
+        width: 120px;
+        height: 120px;
         display: block;
         position: absolute;
-        top: -60px; /* Adjusted top value */
+        top: -60px;
         left: 50%;
         transform: translateX(-50%);
     }

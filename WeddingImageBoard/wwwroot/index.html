@@ -36,6 +36,13 @@
             document.getElementById("fileInput").click();
         }
     </script>
+
+    <script>
+        function updateProgressBar(progressValue) {
+            // Update the progress bar width using the progress value
+            document.querySelector(".upload-progress").style.width = progressValue + "%";
+        }
+    </script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 
