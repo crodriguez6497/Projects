@@ -1,0 +1,347 @@
+/* /Shared/MainLayout.razor.rz.scp.css */
+@font-face {
+    font-family: 'Breezeblocks';
+    src: url('./fonts/Breezeblocks.ttf') format('truetype'), url('./fonts/MyOpenTypeFont.otf') format('opentype');
+}
+
+.background-col[b-fbrgg9u8gc] {
+    background-color: #fafafa;
+    height: 100%; /* if you want the background color to cover the entire viewport height, use 100vh instead */
+    width: 100%; /* full width */
+}
+
+.main-container[b-fbrgg9u8gc] {
+    margin: 0 auto; /* Center the container horizontally */
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    border: 1px solid #f4f4f5;
+}
+
+.top-container[b-fbrgg9u8gc] {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header-container[b-fbrgg9u8gc] {
+    padding: 10% 0;
+    text-align: center;
+    padding: 200px;
+    position: relative;
+    color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    z-index: 1;
+}
+.border-line[b-fbrgg9u8gc] {
+    width: 50%; /* Adjust the width to match desired size */
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 auto; /* Center the divider */
+}
+
+.tab-container[b-fbrgg9u8gc] {
+    width: 100%;
+    text-align: center; /* Change to center for centering the tab text */
+    padding: 15px 0; /* Increase padding for more spacing above and below the tab */
+}
+
+.tab[b-fbrgg9u8gc] {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 25px; /* Increase padding for a larger clickable area */
+    margin-bottom: 10px; /* Increase spacing between tab and divider */
+    font-weight: bold;
+    border: 2px solid #ccc; /* Add border to the tab */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+    .header-container h1[b-fbrgg9u8gc],
+    .header-container h2[b-fbrgg9u8gc] {
+        font-family: 'Breezeblocks';
+        font-size: 5em;
+        text-align: center;
+        margin: 10px 0;
+        z-index: 2;
+    }
+
+.background-image[b-fbrgg9u8gc] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: url('./pictures/backgroundimage.jpg') no-repeat center center;
+    background-size: 100% auto;
+}
+
+
+.custom-button[b-fbrgg9u8gc] {
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 25%;
+    background-color: rgba(51, 51, 51, 0.6);
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+    .custom-button:hover[b-fbrgg9u8gc] {
+        background-color: rgba(51, 51, 51, 1);
+    }
+
+body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+
+.full-screen-flex[b-fbrgg9u8gc] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.input-file-hidden[b-fbrgg9u8gc] {
+    display: none;
+}
+
+.custom-file-upload[b-fbrgg9u8gc] {
+    padding: 10px 15px;
+    background-color: rgba(51, 51, 51, 0.6); /* Change to your preferred color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10%;
+}
+
+    .custom-file-upload:hover[b-fbrgg9u8gc] {
+        background-color: rgba(51, 51, 51, 0.8);
+    }
+
+.name-input-box[b-fbrgg9u8gc]::placeholder {
+    text-align: center;
+}
+.name-input-box[b-fbrgg9u8gc] {
+    border-radius: 10px;
+}
+
+.gallery-container[b-fbrgg9u8gc] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+
+
+.text-content[b-fbrgg9u8gc] {
+    position: absolute;
+    color: #333;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 92%;
+    padding-left: 3%;
+    font-weight: 500;
+    color: white;
+    font-family: Calibri, sans-serif;
+}
+
+.photo[b-fbrgg9u8gc] {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* This ensures a 1:1 aspect ratio (square) */
+    position: relative; /* Necessary for positioning the inner image */
+}
+
+    .photo img[b-fbrgg9u8gc] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures that images cover the div without distortion */
+
+    }
+
+.photo p[b-fbrgg9u8gc] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    font-size: 1vw;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.upload-popup[b-fbrgg9u8gc] {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    background-color: rgba(255, 255, 255);
+    border: 2px dashed grey;
+    padding: 80px 40px 40px;
+    width: 60%;
+    height: 40%;
+    border-radius: 10px;
+    position: relative;
+}
+
+    .upload-popup[b-fbrgg9u8gc]::before {
+        margin-top: 5%;
+        content: '';
+        background: url('./pictures/upload.png') no-repeat center top;
+        background-size: contain;
+        width: 120px; /* Adjusted width */
+        height: 120px; /* Adjusted height */
+        display: block;
+        position: absolute;
+        top: -60px; /* Adjusted top value */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.file-upload-button[b-fbrgg9u8gc] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+    .file-upload-button + label[b-fbrgg9u8gc] {
+        padding: 10px 15px;
+        background-color: #808080;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+.drag-text[b-fbrgg9u8gc] {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.or-text[b-fbrgg9u8gc] {
+    margin: 20px 0;
+    font-size: 26px;
+    text-align: center;
+    color: grey;
+}
+
+
+
+.close-btn[b-fbrgg9u8gc] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: #e5e5e5;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+    .close-btn:hover[b-fbrgg9u8gc] {
+        background-color: #c5c5c5;
+    }
+
+@media screen and (max-width: 768px) {
+
+    .main-container[b-fbrgg9u8gc] {
+        width: 100%;
+        max-width: 100%;
+    }
+    .top-container[b-fbrgg9u8gc] {
+        padding: 10px 10px;
+    }
+
+    .header-container[b-fbrgg9u8gc] {
+        padding: 15% 0;
+        height: 300px;
+    }
+
+        .header-container h1[b-fbrgg9u8gc] {
+            margin-top: 15%;
+            margin-bottom: -2%;
+        }
+
+    .header-container h1[b-fbrgg9u8gc],
+    .header-container h2[b-fbrgg9u8gc] {
+        font-size: 3.5em;
+    }
+
+    .background-image[b-fbrgg9u8gc] {
+        background-size: cover;
+    }
+
+    .gallery-container[b-fbrgg9u8gc] {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-content: center;
+    }
+    .custom-button[b-fbrgg9u8gc] {
+        margin-top: 10%;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        display: inline-block;
+        width: auto;
+    }
+
+    .upload-popup[b-fbrgg9u8gc] {
+        padding: 50px;
+        height: 70%;
+        width: 90%;
+    }
+
+    .upload-popup[b-fbrgg9u8gc]::before {
+        width: 100px;
+        height: 100px;
+        top: 2%;
+    }
+
+    .drag-text[b-fbrgg9u8gc],
+    .or-text[b-fbrgg9u8gc] {
+        font-size: 24px;
+    }
+    .file-upload-button + label[b-fbrgg9u8gc] {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

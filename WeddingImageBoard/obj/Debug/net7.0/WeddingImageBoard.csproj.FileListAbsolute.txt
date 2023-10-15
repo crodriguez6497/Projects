@@ -1,4 +1,6 @@
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Core.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Identity.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Security.KeyVault.Secrets.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Storage.Blobs.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Storage.Common.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json
@@ -51,6 +53,9 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.ObjectPool.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Options.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Primitives.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Identity.Client.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.JSInterop.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
@@ -186,6 +191,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Encoding.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Primitives.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.ProtectedData.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Principal.dll
@@ -335,6 +341,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Xml.ReaderWriter.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipes.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.CSharp.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.ProtectedData.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Binder.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\mscorlib.dll.gz
@@ -362,6 +369,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.TypeExtensions.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Transactions.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Collections.NonGeneric.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Identity.Client.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Handles.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Net.Security.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.dll.gz
@@ -380,9 +388,11 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Net.ServicePoint.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Debug.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.AppContext.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Identity.Client.Extensions.Msal.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Web.HttpUtility.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipelines.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Identity.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebClient.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipes.AccessControl.dll.gz
@@ -442,6 +452,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.IO.Compression.FileSystem.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Emit.Lightweight.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Authentication.Core.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.IdentityModel.Abstractions.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Encoding.dll.gz
@@ -449,6 +460,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebSockets.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\icudt_no_CJK.dat.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Azure.Security.KeyVault.Secrets.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Routing.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\System.Memory.Data.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz
@@ -459,6 +471,8 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Wedd
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Azure.Core.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Azure.Security.KeyVault.Secrets.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Azure.Storage.Blobs.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Azure.Storage.Common.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -501,6 +515,9 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Micr
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.JSInterop.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.Net.Http.Headers.dll
@@ -508,6 +525,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Newt
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\System.IO.Hashing.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\System.Memory.Data.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.CSharp.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.VisualBasic.Core.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.VisualBasic.dll
@@ -690,6 +708,8 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\Wedd
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\WeddingImageBoard.csproj.CoreCompileInputs.cache
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\WeddingImageBoard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\TSbgD5J6.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\qOqDJGNV.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\zjrW5MH2.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\rvf4rIGh.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\ym3F5iao.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\+hhS1kdh.gz
@@ -732,6 +752,9 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\buil
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\vFEM1ijm.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\8UcUD6cB.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\+pV0ZOOL.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\mpyV9sa1.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\QcxSMjLb.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\XtwkHCaa.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\PiTtZbV6.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\L+KkKpcC.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\iM3JaKqa.gz
@@ -739,6 +762,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\buil
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\WPmg9D2u.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\qJ1G8f12.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\zN+YCpCe.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\iitX7Mzt.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\If6B+Olf.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\6ljaXBJp.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\4eomiOMF.gz
