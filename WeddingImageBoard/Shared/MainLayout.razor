@@ -14,8 +14,8 @@
 <!--Add a loading bar to the image upload and a complete message when the photos are uploaded. followed by closing the upload popup-->
 
 @if (showUploadPopup) {
-    <div class="full-screen-flex">
-        <div class="upload-popup">
+    <div class="full-screen-flex" @onclick="CloseUploadPopup">
+        <div class="upload-popup" @onclick="CloseUploadPopup">
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
 
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
@@ -34,7 +34,7 @@
 @if (showImagePopup) {
     <div class="image-popup open" @onclick="CloseImagePopup">
         <div class="image-popup-content">
-            <span class="image-close" @onclick="CloseImagePopup">×</span>
+             <span class="image-close" @onclick="CloseImagePopup">×</span>
             <img src="@popupImageUrl" alt="Full-sized Image" />
         </div>
     </div>

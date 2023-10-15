@@ -307,7 +307,21 @@ body, html {
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
 }
+
+
+    .image-popup-content img {
+        width: auto;
+        max-width: 100%; /* Ensure the image doesn't exceed its container width */
+        height: auto;
+        max-height: 80vh; /* Ensure the image doesn't exceed 80% of the viewport height */
+        display: block;
+        margin: auto;
+    }
+
 
 .image-close {
     position: absolute;
@@ -317,6 +331,19 @@ body, html {
     cursor: pointer;
 }
 /* image pop-up end */
+
+@media only screen and (max-width: 480px) {
+    .image-popup-content {
+        padding: 10px;
+        width: 95vw;
+        height: auto;
+    }
+
+        .image-popup-content img {
+            width: 100%;
+            height: auto;
+        }
+}
 
 @media screen and (max-width: 768px) {
 
@@ -381,4 +408,16 @@ body, html {
         padding: 8px 12px;
         font-size: 14px;
     }
+
+    .image-popup-content {
+        padding: 15px;
+        width: 92vw;
+        height: auto;
+        max-height: 90vh;
+    }
+
+        .image-popup-content img {
+            width: auto;
+            height: auto;
+        }
 }

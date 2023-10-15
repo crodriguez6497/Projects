@@ -293,7 +293,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    z-index: 5;
 }
 
 .image-popup.open[b-fbrgg9u8gc] {
@@ -308,7 +308,21 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
 }
+
+
+    .image-popup-content img[b-fbrgg9u8gc] {
+        width: auto;
+        max-width: 100%; /* Ensure the image doesn't exceed its container width */
+        height: auto;
+        max-height: 80vh; /* Ensure the image doesn't exceed 80% of the viewport height */
+        display: block;
+        margin: auto;
+    }
+
 
 .image-close[b-fbrgg9u8gc] {
     position: absolute;
@@ -318,6 +332,19 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     cursor: pointer;
 }
 /* image pop-up end */
+
+@media only screen and (max-width: 480px) {
+    .image-popup-content[b-fbrgg9u8gc] {
+        padding: 10px;
+        width: 95vw; /* Increase to 95% of the viewport width for small devices */
+        height: auto; /*95vh;  Increase to 95% of the viewport height for small devices */
+    }
+
+        .image-popup-content img[b-fbrgg9u8gc] {
+            width: 100%; /* Use the full width available */
+            height: auto; /* Keep the aspect ratio */
+        }
+}
 
 @media screen and (max-width: 768px) {
 
@@ -382,4 +409,15 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
         padding: 8px 12px;
         font-size: 14px;
     }
+
+    .image-popup-content[b-fbrgg9u8gc] {
+        padding: 15px;
+        width: 92vw;
+        height: auto;
+    }
+
+        .image-popup-content img[b-fbrgg9u8gc] {
+            width: auto;
+            height: auto;
+        }
 }
