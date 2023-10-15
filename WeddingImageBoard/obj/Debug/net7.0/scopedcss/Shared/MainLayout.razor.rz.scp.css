@@ -73,6 +73,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 .custom-button[b-fbrgg9u8gc] {
     padding: 10px 20px;
     border-radius: 20px;
+    width: 25%;
     background-color: rgba(51, 51, 51, 0.6);
     border: 1px solid white;
     color: white;
@@ -215,20 +216,42 @@ button[b-fbrgg9u8gc] {
     }
 
 @media screen and (max-width: 768px) {
+    .main-container[b-fbrgg9u8gc] {
+        padding: 20px 10px; /* reduce side padding */
+    }
+
+    .header-container h1[b-fbrgg9u8gc],
+    .header-container h2[b-fbrgg9u8gc] {
+        font-size: 3em; /* reduce font size for header texts */
+    }
+
+    .gallery-container[b-fbrgg9u8gc] {
+        grid-template-columns: repeat(3, 1fr); /* Display 2 images per row */
+        gap: 15px; /* Increase gap between images */
+        justify-content: center; /* Center the grid */
+    }
+    .custom-button[b-fbrgg9u8gc] {
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        display: inline-block;
+        width: auto;
+        margin: 10px;
+    }
+        .photo img[b-fbrgg9u8gc] {
+        height: 80%;
+    }
+
     .upload-popup[b-fbrgg9u8gc] {
         padding: 50px;
         height: auto;
     }
 
-.upload-popup[b-fbrgg9u8gc]::before {
-    width: 100px;
-    height: 100px;
-    top: -50px;
-}
-    .photo img[b-fbrgg9u8gc] {
-        height:75%; /* Adjust height for mobile */
-    }
-
+        .upload-popup[b-fbrgg9u8gc]::before {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+        }
 
     .drag-text[b-fbrgg9u8gc],
     .or-text[b-fbrgg9u8gc] {

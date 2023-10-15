@@ -89,6 +89,10 @@
       "PackagePath": "staticwebassets\\pictures\\backgroundimage.jpg"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\upload.png",
+      "PackagePath": "staticwebassets\\pictures\\upload.png"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\service-worker.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
