@@ -69,7 +69,11 @@
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
                 <ItemTemplate Context="blobWithMetadata">
                     <div class="photo">
-                        <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))" />
+                        <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)"
+                             alt="@blobWithMetadata.BlobItem.Name"
+                             loading="lazy"
+                        @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))" />
+
                         @foreach (var metadata in blobWithMetadata.Metadata)
                         {
                             <div class="text-content">@metadata.Value</div>
@@ -219,29 +223,22 @@
 
     private async Task<IEnumerable<BlobWithMetadata>> GetBlobItemsInChunks(InfiniteScrollingItemsProviderRequest request)
     {
-        await Task.Delay(1000); // Simulate async loading
         var sasUri = await GetBrowseSasUriFromFunction();
         BlobContainerClient containerClient = new BlobContainerClient(sasUri);
         var allBlobItems = new List<BlobWithMetadata>();
 
-        int pageSize = 15; // Assuming 15 items per page
+        int pageSize = 15;
         var blobResults = containerClient.GetBlobsAsync(BlobTraits.Metadata, BlobStates.All);
 
-        var enumerator = blobResults.GetAsyncEnumerator();
-
-        while (await enumerator.MoveNextAsync())
+        var tasks = new List<Task<BlobWithMetadata>>();
+        await foreach (BlobItem blobItem in blobResults)
         {
-            BlobItem blobItem = enumerator.Current;
-            BlobClient blobClient = containerClient.GetBlobClient(blobItem.Name);
-            BlobProperties properties = await blobClient.GetPropertiesAsync();
-
-            allBlobItems.Add(new BlobWithMetadata
-                {
-                    BlobItem = blobItem,
-                    Metadata = properties.Metadata,
-                    CreationTime = properties.CreatedOn
-                });
+            tasks.Add(FetchBlobMetadata(containerClient, blobItem));
         }
+
+        // Execute tasks in parallel
+        var results = await Task.WhenAll(tasks);
+        allBlobItems.AddRange(results);
 
         // Sort all blob items by creation time
         allBlobItems = allBlobItems.OrderByDescending(b => b.CreationTime).ToList();
@@ -251,6 +248,20 @@
 
         return allBlobItems.Skip(startIndex).Take(endIndex - startIndex);
     }
+
+    private async Task<BlobWithMetadata> FetchBlobMetadata(BlobContainerClient containerClient, BlobItem blobItem)
+    {
+        BlobClient blobClient = containerClient.GetBlobClient(blobItem.Name);
+        BlobProperties properties = await blobClient.GetPropertiesAsync();
+
+        return new BlobWithMetadata
+            {
+                BlobItem = blobItem,
+                Metadata = properties.Metadata,
+                CreationTime = properties.CreatedOn
+            };
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
