@@ -243,7 +243,10 @@
         }
 
         // Sort blob items by creation time for this chunk
-        return blobItemsChunk.OrderByDescending(b => b.CreationTime);
+        blobItemsChunk = blobItemsChunk.OrderByDescending(b => b.CreationTime).ToList();
+
+        return blobItemsChunk;
     }
+
 
 }
