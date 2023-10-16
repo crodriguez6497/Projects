@@ -90,11 +90,16 @@
     private bool showImagePopup = false;
 
 
-    private async Task<Uri> GetSasUriFromFunction()
+    private async Task<Uri> GetUploadSasUriFromFunction()
     {
-        var response = await Http.GetFromJsonAsync<Uri>("https://weddingimagesfunction.azurewebsites.net/api/Function1");
-        return response;
+        return await Http.GetFromJsonAsync<Uri>("https://weddingwebsitefunctions.azurewebsites.net/api/GetUploadBlobSAS");
     }
+
+    private async Task<Uri> GetBrowseSasUriFromFunction()
+    {
+        return await Http.GetFromJsonAsync<Uri>("https://weddingwebsitefunctions.azurewebsites.net/api/GetBrowseContainerSAS");
+    }
+
 
     private void OpenImagePopup(string imageUrl)
     {
@@ -162,7 +167,8 @@
             string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
 
             // Get the SAS URI from the Azure Function
-            Uri sasUri = await GetSasUriFromFunction();
+            Uri sasUri = await GetUploadSasUriFromFunction();
+
 
             BlobClient blobClient = new BlobClient(sasUri);
 
@@ -190,7 +196,7 @@
 
     private async Task LoadBlobItems()
     {
-        Uri sasUri = await GetSasUriFromFunction();
+        Uri sasUri = await GetBrowseSasUriFromFunction();
 
         // Instantiate the BlobContainerClient directly with the SAS URI
         BlobContainerClient containerClient = new BlobContainerClient(sasUri);

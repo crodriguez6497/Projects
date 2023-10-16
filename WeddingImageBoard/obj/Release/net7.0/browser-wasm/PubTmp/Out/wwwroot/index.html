@@ -38,9 +38,19 @@
     </script>
 
     <script>
-        function updateProgressBar(progressValue) {
-            // Update the progress bar width using the progress value
-            document.querySelector(".upload-progress").style.width = progressValue + "%";
+        function updateProgressBar(value) {
+            let progressBar = document.querySelector('.upload-progress');
+            if (progressBar) {
+                progressBar.style.width = value + '%';
+            }
+        }        
+    </script>
+    <script>
+        function triggerFilePicker() {
+            let fileInput = document.getElementById('custom-file-upload');
+            if (fileInput) {
+                fileInput.click();
+            }
         }
     </script>
     <script src="_framework/blazor.webassembly.js"></script>
