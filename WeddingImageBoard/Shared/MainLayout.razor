@@ -1,4 +1,5 @@
-﻿@using Azure.Identity;
+﻿@using System
+@using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
 @using Microsoft.AspNetCore.Components.Forms;
@@ -9,11 +10,12 @@
 @using System.Threading;
 @using System.Threading.Tasks;
 @using Microsoft.Extensions.Configuration;
+@using WeddingImageBoard.InfiniteScrolling
+
 @inject IConfiguration config
 @inject IJSRuntime JSRuntime
 @inject HttpClient Http
 @inherits LayoutComponentBase
-<!--Add a loading bar to the image upload and a complete message when the photos are uploaded. followed by closing the upload popup-->
 
 @if (showUploadPopup) {
     <div class="full-screen-flex">
@@ -62,18 +64,23 @@
         <div class="border-line">
             </div>
 
-<div class="gallery-container">
-    @foreach (var blobWithMetadata in blobItems)
-    {
-        <div class="photo">
-            <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))"/>
-            @foreach (var metadata in blobWithMetadata.Metadata)
-            {
-                <div class="text-content">@metadata.Value</div>
-            }
+        <div class="gallery-container">
+            <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
+                <ItemTemplate Context="blobWithMetadata">
+                    <div class="photo">
+                        <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)" alt="@blobWithMetadata.BlobItem.Name" @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))" />
+                        @foreach (var metadata in blobWithMetadata.Metadata)
+                        {
+                            <div class="text-content">@metadata.Value</div>
+                        }
+                    </div>
+                </ItemTemplate>
+                <LoadingTemplate>
+                    <div>Loading...</div>
+                </LoadingTemplate>
+            </InfiniteScrolling>
         </div>
-    }
-</div>
+
 </div>
 </div>
 
@@ -149,7 +156,6 @@
         await Task.Delay(2000);
 
         CloseUploadPopup();
-        await LoadBlobItems();
     }
 
 
@@ -185,39 +191,11 @@
             await blobClient.SetMetadataAsync(metadata);
 
             uploadedFiles++;
-            progressPercentage = (uploadedFiles * 100) / totalFiles;
-            await JSRuntime.InvokeVoidAsync("updateProgressBar", progressPercentage);
-
-            Console.WriteLine("Upload successful");
+            progressPercentage = (int)((uploadedFiles / (float)totalFiles) * 100);
+            StateHasChanged();
         }
     }
 
-
-
-    private async Task LoadBlobItems()
-    {
-        Uri sasUri = await GetBrowseSasUriFromFunction();
-
-        // Instantiate the BlobContainerClient directly with the SAS URI
-        BlobContainerClient containerClient = new BlobContainerClient(sasUri);
-
-        blobItems.Clear();
-        await foreach (BlobItem blobItem in containerClient.GetBlobsAsync())
-        {
-            BlobClient blobClient = containerClient.GetBlobClient(blobItem.Name);
-            BlobProperties properties = await blobClient.GetPropertiesAsync();
-
-            blobItems.Add(new BlobWithMetadata
-                {
-                    BlobItem = blobItem,
-                    Metadata = properties.Metadata,
-                    CreationTime = properties.CreatedOn
-                });
-        }
-
-        // Sort blob items by creation time
-        blobItems = blobItems.OrderByDescending(b => b.CreationTime).ToList();
-    }
 
     private string GetBlobUri(string blobName)
     {
@@ -232,8 +210,40 @@
         public DateTimeOffset? CreationTime { get; set; }
     }
 
-    protected override async Task OnInitializedAsync()
+    private async Task<IEnumerable<BlobWithMetadata>> GetBlobItemsInChunks(InfiniteScrollingItemsProviderRequest request)
     {
-        await LoadBlobItems();
+        await Task.Delay(1000); // Simulate async loading
+        var sasUri = await GetBrowseSasUriFromFunction();
+        BlobContainerClient containerClient = new BlobContainerClient(sasUri);
+        var blobItemsChunk = new List<BlobWithMetadata>();
+
+        int pageSize = 15; // Assuming 15 items per page
+        var blobResults = containerClient.GetBlobsAsync(BlobTraits.Metadata, BlobStates.All);
+
+        var enumerator = blobResults.GetAsyncEnumerator();
+        var count = 0;
+
+        while (await enumerator.MoveNextAsync() && count < request.StartIndex)
+        {
+            count++;
+        }
+
+        while (await enumerator.MoveNextAsync() && blobItemsChunk.Count < pageSize)
+        {
+            BlobItem blobItem = enumerator.Current;
+            BlobClient blobClient = containerClient.GetBlobClient(blobItem.Name);
+            BlobProperties properties = await blobClient.GetPropertiesAsync();
+
+            blobItemsChunk.Add(new BlobWithMetadata
+                {
+                    BlobItem = blobItem,
+                    Metadata = properties.Metadata,
+                    CreationTime = properties.CreatedOn
+                });
+        }
+
+        // Sort blob items by creation time for this chunk
+        return blobItemsChunk.OrderByDescending(b => b.CreationTime);
     }
+
 }

@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\index.html.__projection.g.js"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\infinite-scrolling.js",
+      "PackagePath": "staticwebassets\\infinite-scrolling.js"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\manifest.json",
       "PackagePath": "staticwebassets\\manifest.json"
     },
