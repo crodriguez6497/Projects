@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cNWWRMM9UHKK+bL19XeWSX3ygG7GmwqifY0NLNZ2GsHb6hjE2kvhDIwC+4fQ3O4KmaQOxGUv6SaatOCg+CEufg==",
+  "dgSpecHash": "TywOECtBdGcipPPzCnDqB6U6vH5spUmgrRZxKL2rq+fjUonmy+Ux15X0AXjRl7KdC4EYdSpFTNml8H42it8Glw==",
   "success": true,
   "projectFilePath": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\WeddingImageBoard.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\crodr\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\crodr\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\quick.aspnetcore.components.web.extensions.6.0.2.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\runtime.any.system.collections\\4.0.11\\runtime.any.system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\runtime.any.system.globalization\\4.0.11\\runtime.any.system.globalization.4.0.11.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\runtime.any.system.io\\4.1.0\\runtime.any.system.io.4.1.0.nupkg.sha512",

@@ -965,6 +965,29 @@
           }
         }
       },
+      "Quick.AspNetCore.Components.Web.Extensions/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.2",
+          "Microsoft.JSInterop": "6.0.2"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Quick.AspNetCore.Components.Web.Extensions.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Quick.AspNetCore.Components.Web.Extensions.props": {}
+        }
+      },
       "runtime.native.System/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2627,6 +2650,29 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Quick.AspNetCore.Components.Web.Extensions/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.2",
+          "Microsoft.JSInterop": "6.0.2"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Quick.AspNetCore.Components.Web.Extensions.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Quick.AspNetCore.Components.Web.Extensions.props": {}
         }
       },
       "runtime.any.System.Collections/4.0.11": {
@@ -4660,6 +4706,25 @@
         "newtonsoft.json.13.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Quick.AspNetCore.Components.Web.Extensions/6.0.2": {
+      "sha512": "ppLXEca1BL48Sgq0MZyBsQlH0TJXkqY8uqoXl4xv5mpJDBbft6aa4ACOQNztWXwjX0ry13ebDfQLQIgmfekK2w==",
+      "type": "package",
+      "path": "quick.aspnetcore.components.web.extensions/6.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Quick.AspNetCore.Components.Web.Extensions.props",
+        "buildMultiTargeting/Quick.AspNetCore.Components.Web.Extensions.props",
+        "buildTransitive/Quick.AspNetCore.Components.Web.Extensions.props",
+        "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Components.Web.Extensions.xml",
+        "quick.aspnetcore.components.web.extensions.6.0.2.nupkg.sha512",
+        "quick.aspnetcore.components.web.extensions.nuspec",
+        "staticwebassets/headManager.js"
       ]
     },
     "runtime.any.System.Collections/4.0.11": {
@@ -7197,7 +7262,8 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.12",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "Quick.AspNetCore.Components.Web.Extensions >= 6.0.2"
     ]
   },
   "packageFolders": {
@@ -7272,6 +7338,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "Quick.AspNetCore.Components.Web.Extensions": {
+            "target": "Package",
+            "version": "[6.0.2, )"
           }
         },
         "imports": [

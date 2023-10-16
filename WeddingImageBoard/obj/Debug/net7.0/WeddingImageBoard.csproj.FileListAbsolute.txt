@@ -957,3 +957,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\Wedd
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\refint\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\ref\WeddingImageBoard.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.Extensions.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Debug\net7.0\build-gz\ZPul0gVy.gz

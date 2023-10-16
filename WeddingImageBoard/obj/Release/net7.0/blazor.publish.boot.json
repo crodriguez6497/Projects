@@ -18,6 +18,7 @@
       "Microsoft.AspNetCore.Authorization.Policy.dll": "sha256-4f7xvTVUxi0h0P0Hci5blPefIu8mspp\/qgcIrxhfvdU=",
       "Microsoft.AspNetCore.Components.dll": "sha256-28GLG2aExXB5RR+vgWbSrFoHGd85fh6ERjxqsgTwtjo=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-o\/2eqWS0ElqeZHADzXkaGm1A7rNcIkGdO+KcWEfab8k=",
+      "Microsoft.AspNetCore.Components.Web.Extensions.dll": "sha256-YqPB4Wjzv5nSYi6nzwjVggbJ21Z6AQSU+qYNmrdGPhk=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-YpbY\/jiL6KQfps54D3g9eIPV1jz7yg+lBMmGcBhQKZI=",
       "Microsoft.AspNetCore.Hosting.Abstractions.dll": "sha256-4VEnr\/VXawxchLjnFr86t8XA5fF3ZLb61F6I54GBAoQ=",
       "Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": "sha256-3FWyABkOEBeAcg6oyNO1PytWU+vm8OBnbxtkWVup0TI=",
@@ -133,7 +134,7 @@
       "System.Xml.Linq.dll": "sha256-gZUHJx6n6\/BsI06El7STicgfVb9mzCZBbvI8BkNSuOM=",
       "System.Xml.ReaderWriter.dll": "sha256-\/oUGWxMIqvHJrbvn0UpBbihCdO05TDjyJcjhvEcXDsg=",
       "System.Xml.XDocument.dll": "sha256-3AjFlw+gNtnx91mk0sHCwW5WTt2rmLkenEXFjiyqjiA=",
-      "WeddingImageBoard.dll": "sha256-eB\/FBw08FU5ulFpcKnfV7QwnORz0IE1H67qdKFX5Ohc="
+      "WeddingImageBoard.dll": "sha256-HGLAMDYF6W+aVMzaOILo9+txnlLXfKmsX8LwZ5z7vfo="
     },
     "extensions": null,
     "lazyAssembly": null,

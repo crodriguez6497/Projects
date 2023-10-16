@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uRfxJ7vt8kyYFntSRdRLRbPvTqbA5UmSuH0ahBsXSNw=",
+  "Hash": "iNeW9P4Fixbol0rRqBJ83ye9UFA/n0m0w5w0zKilVPA=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\crodr\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\headManager.js",
+      "SourceId": "Quick.AspNetCore.Components.Web.Extensions",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\crodr\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\",
+      "BasePath": "_content/Quick.AspNetCore.Components.Web.Extensions",
+      "RelativePath": "headManager.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\headManager.js"
+    },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Azure.Core.dll",
       "SourceId": "WeddingImageBoard",
@@ -372,6 +389,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Components.Web.dll"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.Extensions.dll",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.Extensions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\lib\\net6.0\\Microsoft.AspNetCore.Components.Web.Extensions.dll"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.WebAssembly.dll",
@@ -7920,6 +7954,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\System.Memory.Data.dll"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\ZPul0gVy.gz",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.Extensions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.Extensions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.Extensions.dll"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\ZtR6lF3k.gz",
