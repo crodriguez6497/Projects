@@ -96,7 +96,7 @@
       "System.Net.Sockets.dll": "sha256-8bUf\/rTmiojM97GCD7Gh0BTfIg2s4PMnb+HAI6sMN9E=",
       "System.Net.WebSockets.dll": "sha256-pXuu+WklhLeoUy0GEbFLTZgMhlrOxkbgvmlO+4ybOYc=",
       "System.ObjectModel.dll": "sha256-FpqrYCr2IkhNwoYhoj6YQ2nsu3iRo4DQ7gsYee5vyD0=",
-      "System.Private.CoreLib.dll": "sha256-\/rwqgAReb8Kw1TulZ3vQDlE9Whtz4qAXGwQR0mqvD00=",
+      "System.Private.CoreLib.dll": "sha256-UYEQH802rjr\/qYnT9o475aC5yi2uMc2Z1SNOZBrnhCM=",
       "System.Private.Uri.dll": "sha256-P6VUqHDAeaWDasIEhRygJXW3gPjmXM233skMWPCqGu0=",
       "System.Private.Xml.dll": "sha256-lxQDfjrtbAtx09OooUrKLdow6jOfeWM4gNA48qwnvmM=",
       "System.Private.Xml.Linq.dll": "sha256-X7ILfRMDR1wEFhF41Ur7H6DbOCHOZcddEXvwTAS+0nA=",
@@ -134,7 +134,7 @@
       "System.Xml.Linq.dll": "sha256-gZUHJx6n6\/BsI06El7STicgfVb9mzCZBbvI8BkNSuOM=",
       "System.Xml.ReaderWriter.dll": "sha256-\/oUGWxMIqvHJrbvn0UpBbihCdO05TDjyJcjhvEcXDsg=",
       "System.Xml.XDocument.dll": "sha256-3AjFlw+gNtnx91mk0sHCwW5WTt2rmLkenEXFjiyqjiA=",
-      "WeddingImageBoard.dll": "sha256-HGLAMDYF6W+aVMzaOILo9+txnlLXfKmsX8LwZ5z7vfo="
+      "WeddingImageBoard.dll": "sha256-qJkZLnrBlPUV75wkIVTmSJY0PTjBUQdvAcDyQPYF5cc="
     },
     "extensions": null,
     "lazyAssembly": null,
