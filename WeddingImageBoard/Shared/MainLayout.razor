@@ -24,7 +24,7 @@
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
 
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
-            <InputFile @ref="inputFile" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="100000000" OnChange="HandleFileSelected"></InputFile>
+            <InputFile @ref="inputFile" MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
             <div class="upload-progress-container" style="@(showProgressBar ? "display:block;" : "display:none;")">
                 <div class="upload-progress" style="width:@(progressPercentage + "%")"></div>
             </div>
@@ -89,7 +89,14 @@
 </div>
 </div>
 
+
+
 @code {
+    // TODO: Add upload text to specify max upload of 50 files / 500mb below upload button in popup.
+    // TODO: Error handling and error handling messages
+    // TODO: Add gallery tab, and second tab for primary wedding website
+    // TODO: Add selected files to upload popup with progress bar for each?
+
     private bool showProgressBar = false;
     private bool showSuccessMessage = false;
     private int progressPercentage = 0;
@@ -156,18 +163,26 @@
     {
         showProgressBar = true;
         showSuccessMessage = false;
-        StateHasChanged();  // Request a re-render
+        StateHasChanged();
 
-        var files = e.GetMultipleFiles().ToList();
+        var files = e.GetMultipleFiles(50).ToList();
         await UploadPhotosAsync(files);
 
         showProgressBar = false;
         showSuccessMessage = true;
-        StateHasChanged();  // Request a re-render
+        StateHasChanged();
         await Task.Delay(2000);
 
         CloseUploadPopup();
+        currentPage = 1;
+        displayedItems.Clear();
+        hasMoreItems = true;
+        var request = new InfiniteScrollingItemsProviderRequest(0, CancellationToken.None);
+        await LoadItemsAsync(request);
+
+        StateHasChanged();
     }
+
 
 
 

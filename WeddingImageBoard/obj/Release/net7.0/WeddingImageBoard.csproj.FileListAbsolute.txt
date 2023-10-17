@@ -19,6 +19,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\ww
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Hosting.Abstractions.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
@@ -463,6 +464,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\ww
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Security.KeyVault.Secrets.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Routing.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Memory.Data.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\icudt_CJK.dat.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.IO.dll.gz
@@ -522,6 +524,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Mi
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.Net.Http.Headers.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Newtonsoft.Json.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.AspNetCore.Components.Web.Extensions.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.IO.Hashing.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.IO.Pipelines.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.Memory.Data.dll
@@ -759,6 +762,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\bu
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\L+KkKpcC.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\iM3JaKqa.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\g+Iyx9rh.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\ZPul0gVy.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\WPmg9D2u.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\qJ1G8f12.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\zN+YCpCe.gz
@@ -957,7 +961,3 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\refint\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\ref\WeddingImageBoard.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.Extensions.dll.gz
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.AspNetCore.Components.Web.Extensions.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\ZPul0gVy.gz
