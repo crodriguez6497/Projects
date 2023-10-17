@@ -342,14 +342,6 @@ body {
     padding: 20%;
 }
 
-h3 {
-    font-weight: 900;
-    font: 1em 'Montserrat';
-    color: #121212;
-    margin: 0;
-    text-transform: uppercase;
-}
-
 .loading span {
     display: inline-block;
     vertical-align: middle;
