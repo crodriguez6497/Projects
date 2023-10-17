@@ -128,7 +128,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     }
 
         .tab.active[b-fbrgg9u8gc]::before {
-            margin-top: -23%;
+            margin-top: -23.4%;
             content: "";
             position: absolute;
             top: 0;
@@ -136,6 +136,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
             right: 0;
             height: 2px;
             background: grey;
+            border-radius: 5px;
         }
 
 

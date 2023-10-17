@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\pictures\\backgroundimage.jpg"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\favicon.png",
+      "PackagePath": "staticwebassets\\pictures\\favicon.png"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\gallery.png",
       "PackagePath": "staticwebassets\\pictures\\gallery.png"
     },
