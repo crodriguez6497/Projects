@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TVtPnE1nCHAzYioxr/uTGB8J0qxnaY8Jhh97SEZr5Nk=",
+  "Hash": "6u7WEwBbHqJE9W6G5xmitCGZ/7a9+qItG5fhzEVmelY=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -7327,23 +7327,6 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\favicon.png",
-      "SourceId": "WeddingImageBoard",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "favicon.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
-    },
-    {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.otf",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Discovered",
@@ -7461,6 +7444,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pictures\\backgroundimage.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\favicon.png",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "pictures/favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\favicon.png"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\gallery.png",

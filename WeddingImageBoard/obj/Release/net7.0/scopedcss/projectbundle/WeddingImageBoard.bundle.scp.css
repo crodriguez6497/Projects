@@ -73,7 +73,6 @@
     background-size: 100% auto;
 }
 
-
 .custom-button[b-fbrgg9u8gc] {
     padding: 10px 20px;
     border-radius: 20px;
@@ -123,7 +122,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     margin-right: 5%;
 }
 
-
     .tab.active[b-fbrgg9u8gc] {
         color: black;
     }
@@ -139,9 +137,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
             background: grey;
             border-radius: 5px;
         }
-
-
-
 
 .full-screen-flex[b-fbrgg9u8gc] {
     display: flex;
@@ -190,8 +185,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     width: 90%;
     max-width: 1200px;
 }
-
-
 
 .text-content[b-fbrgg9u8gc] {
     position: absolute;
@@ -298,8 +291,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     color: grey;
 }
 
-
-
 .close-btn[b-fbrgg9u8gc] {
     position: absolute;
     top: 10px;
@@ -329,11 +320,14 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-popup.open[b-fbrgg9u8gc] {
-    display: block;
-}
+    .image-popup.open[b-fbrgg9u8gc] {
+        display: flex;
+    }
 
 .image-popup-content[b-fbrgg9u8gc] {
     text-align: center;
@@ -342,22 +336,23 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
-    max-width: 90vw;
-    max-height: 90vh;
+    padding: 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 2px solid #000;
+    max-width: 95vw;
+    max-height: 95vh;
     overflow: hidden;
 }
 
-
     .image-popup-content img[b-fbrgg9u8gc] {
         width: auto;
-        max-width: 100%; /* Ensure the image doesn't exceed its container width */
+        max-width: 100%;
         height: auto;
-        max-height: 80vh; /* Ensure the image doesn't exceed 80% of the viewport height */
+        max-height: 100%;
         display: block;
         margin: auto;
     }
-
 
 .image-close[b-fbrgg9u8gc] {
     position: absolute;
@@ -371,7 +366,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
 
 
 /* Image loading graphic */
-
 body[b-fbrgg9u8gc] {
     background: #222;
     text-align: center;
@@ -433,10 +427,17 @@ body[b-fbrgg9u8gc] {
 
 /* End of image loading graphic */
 
+@media screen and (orientation: landscape) {
+    .image-popup-content[b-fbrgg9u8gc] {
+        max-width: 100vh;
+        max-height: 100vw;
+    }
+}
+
     @media only screen and (max-width: 480px) {
         .image-popup-content[b-fbrgg9u8gc] {
             padding: 10px;
-            width: 95vw;
+            width: 90vh;
             height: auto;
         }
 
