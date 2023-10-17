@@ -62,9 +62,7 @@
         </div>
     </div>
 </div>
-        <div class="border-line">
-            </div>
-
+        <div class="border-line"> </div>
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
                 <ItemTemplate Context="blobWithMetadata">
@@ -80,12 +78,22 @@
                         }
                     </div>
                 </ItemTemplate>
+
                 <LoadingTemplate>
-                    <div>Loading...</div>
+                    <div class="loading">
+                        <h3>Loading...</h3>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </LoadingTemplate>
+
             </InfiniteScrolling>
         </div>
-
 </div>
 </div>
 
@@ -96,6 +104,8 @@
     // TODO: Error handling and error handling messages
     // TODO: Add gallery tab, and second tab for primary wedding website
     // TODO: Add selected files to upload popup with progress bar for each?
+    // TODO: Fonts
+    // TODO: Mobile compatibility for loading display
 
     private bool showProgressBar = false;
     private bool showSuccessMessage = false;

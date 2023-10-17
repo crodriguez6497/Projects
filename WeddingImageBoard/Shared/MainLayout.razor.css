@@ -332,92 +332,178 @@ body, html {
 }
 /* image pop-up end */
 
-@media only screen and (max-width: 480px) {
-    .image-popup-content {
-        padding: 10px;
-        width: 95vw;
-        height: auto;
+
+
+/* Image loading graphic */
+
+body {
+    background: #222;
+    text-align: center;
+    padding: 20%;
+}
+
+h3 {
+    font-weight: 900;
+    font: 1em 'Montserrat';
+    color: #121212;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.loading span {
+    display: inline-block;
+    vertical-align: middle;
+    width: .6em;
+    height: .6em;
+    margin: .19em;
+    background: #007DB6;
+    border-radius: .6em;
+    animation: loading 1s infinite alternate;
+}
+
+    /* Dot colors */
+    .loading span:nth-of-type(2) {
+        background: #008FB2;
+        animation-delay: 0.2s;
     }
 
-        .image-popup-content img {
+    .loading span:nth-of-type(3) {
+        background: #009B9E;
+        animation-delay: 0.4s;
+    }
+
+    .loading span:nth-of-type(4) {
+        background: #00A77D;
+        animation-delay: 0.6s;
+    }
+
+    .loading span:nth-of-type(5) {
+        background: #00B247;
+        animation-delay: 0.8s;
+    }
+
+    .loading span:nth-of-type(6) {
+        background: #5AB027;
+        animation-delay: 1.0s;
+    }
+
+    .loading span:nth-of-type(7) {
+        background: #A0B61E;
+        animation-delay: 1.2s;
+    }
+
+/* Animation keyframes */
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* End of image loading graphic */
+
+    @media only screen and (max-width: 480px) {
+        .image-popup-content {
+            padding: 10px;
+            width: 95vw;
+            height: auto;
+        }
+
+            .image-popup-content img {
+                width: 100%;
+                height: auto;
+            }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .loading {
+            white-space: nowrap;
+        }
+
+        .loading span {
+            width: .4em;
+            height: .4em;
+            margin: .1em;
+        }
+
+        .main-container {
             width: 100%;
-            height: auto;
-        }
-}
-
-@media screen and (max-width: 768px) {
-
-    .main-container {
-        width: 100%;
-        max-width: 100%;
-    }
-    .top-container {
-        padding: 10px 10px;
-    }
-
-    .header-container {
-        padding: 15% 0;
-        height: 300px;
-    }
-
-        .header-container h1 {
-            margin-top: 15%;
-            margin-bottom: -2%;
+            max-width: 100%;
         }
 
-    .header-container h1,
-    .header-container h2 {
-        font-size: 3.5em;
-    }
+        .top-container {
+            padding: 10px 10px;
+        }
 
-    .background-image {
-        background-size: cover;
-    }
+        .header-container {
+            padding: 15% 0;
+            height: 300px;
+        }
 
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-        justify-content: center;
-    }
-    .custom-button {
-        margin-top: 10%;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-align: center;
-        display: inline-block;
-        width: auto;
-    }
+            .header-container h1 {
+                margin-top: 15%;
+                margin-bottom: -2%;
+            }
 
-    .upload-popup {
-        padding: 50px;
-        height: 70%;
-        width: 90%;
-    }
+            .header-container h1,
+            .header-container h2 {
+                font-size: 3.5em;
+            }
 
-    .upload-popup::before {
-        width: 100px;
-        height: 100px;
-        top: 2%;
-    }
+        .background-image {
+            background-size: cover;
+        }
 
-    .drag-text,
-    .or-text {
-        font-size: 24px;
-    }
-    .file-upload-button + label {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
+        .gallery-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            justify-content: center;
+        }
 
-    .image-popup-content {
-        padding: 15px;
-        width: 92vw;
-        height: auto;
-        max-height: 90vh;
-    }
-
-        .image-popup-content img {
+        .custom-button {
+            margin-top: 10%;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
             width: auto;
-            height: auto;
         }
-}
+
+        .upload-popup {
+            padding: 50px;
+            height: 70%;
+            width: 90%;
+        }
+
+            .upload-popup::before {
+                width: 100px;
+                height: 100px;
+                top: 2%;
+            }
+
+        .drag-text,
+        .or-text {
+            font-size: 24px;
+        }
+
+        .file-upload-button + label {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .image-popup-content {
+            padding: 15px;
+            width: 92vw;
+            height: auto;
+            max-height: 90vh;
+        }
+
+            .image-popup-content img {
+                width: auto;
+                height: auto;
+            }
+    }
