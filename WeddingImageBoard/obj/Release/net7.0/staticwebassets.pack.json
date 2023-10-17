@@ -25,6 +25,18 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.css",
+      "PackagePath": "staticwebassets\\css\\loadingscreen.css"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.min.css",
+      "PackagePath": "staticwebassets\\css\\loadingscreen.min.css"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.scss",
+      "PackagePath": "staticwebassets\\css\\loadingscreen.scss"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },

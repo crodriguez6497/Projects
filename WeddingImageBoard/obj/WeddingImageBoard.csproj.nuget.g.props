@@ -19,5 +19,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">C:\Users\crodr\.nuget\packages\microsoft.aspnetcore.components.webassembly.devserver\7.0.12</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
+    <PkgBuildWebCompiler Condition=" '$(PkgBuildWebCompiler)' == '' ">C:\Users\crodr\.nuget\packages\buildwebcompiler\1.12.405</PkgBuildWebCompiler>
   </PropertyGroup>
 </Project>

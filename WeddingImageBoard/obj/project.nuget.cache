@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TywOECtBdGcipPPzCnDqB6U6vH5spUmgrRZxKL2rq+fjUonmy+Ux15X0AXjRl7KdC4EYdSpFTNml8H42it8Glw==",
+  "dgSpecHash": "XfeRt5My20zjg06T94HZD7sF4sDiNpy9s1aU08J+tXUrwlURejmwbVK17cknUto1sGHig97DS6DzlcGgJylpxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\WeddingImageBoard.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\crodr\\.nuget\\packages\\azure.security.keyvault.secrets\\4.5.0\\azure.security.keyvault.secrets.4.5.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\azure.storage.blobs\\12.18.0\\azure.storage.blobs.12.18.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\azure.storage.common\\12.17.0\\azure.storage.common.12.17.0.nupkg.sha512",
+    "C:\\Users\\crodr\\.nuget\\packages\\buildwebcompiler\\1.12.405\\buildwebcompiler.1.12.405.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",

@@ -99,6 +99,12 @@
           }
         }
       },
+      "BuildWebCompiler/1.12.405": {
+        "type": "package",
+        "build": {
+          "build/BuildWebCompiler.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1784,6 +1790,12 @@
           "lib/net6.0/Azure.Storage.Common.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "BuildWebCompiler/1.12.405": {
+        "type": "package",
+        "build": {
+          "build/BuildWebCompiler.targets": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -3563,6 +3575,29 @@
         "lib/net6.0/Azure.Storage.Common.xml",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
         "lib/netstandard2.0/Azure.Storage.Common.xml"
+      ]
+    },
+    "BuildWebCompiler/1.12.405": {
+      "sha512": "1l1RK0jV+5QjJM22J5IGHm/EFaB3JN0WorKnLLP6HRnnf5H4sU4IBdBnMwN1OrVmww/3ir8fhbV0ZNGX6Uqn5w==",
+      "type": "package",
+      "path": "buildwebcompiler/1.12.405",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/BuildWebCompiler.targets",
+        "buildwebcompiler.1.12.405.nupkg.sha512",
+        "buildwebcompiler.nuspec",
+        "tools/net46/NUglify.dll",
+        "tools/net46/Newtonsoft.Json.dll",
+        "tools/net46/WebCompiler.exe",
+        "tools/netcoreapp2.0/NUglify.dll",
+        "tools/netcoreapp2.0/Newtonsoft.Json.dll",
+        "tools/netcoreapp2.0/WebCompiler.dll",
+        "tools/netcoreapp2.0/WebCompiler.runtimeconfig.json",
+        "tools/netstandard2.0/NUglify.dll",
+        "tools/netstandard2.0/Newtonsoft.Json.dll",
+        "tools/netstandard2.0/WebCompiler.dll"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -7259,6 +7294,7 @@
       "Azure.Identity >= 1.10.2",
       "Azure.Security.KeyVault.Secrets >= 4.5.0",
       "Azure.Storage.Blobs >= 12.18.0",
+      "BuildWebCompiler >= 1.12.405",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.12",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
@@ -7322,6 +7358,10 @@
           "Azure.Storage.Blobs": {
             "target": "Package",
             "version": "[12.18.0, )"
+          },
+          "BuildWebCompiler": {
+            "target": "Package",
+            "version": "[1.12.405, )"
           },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",

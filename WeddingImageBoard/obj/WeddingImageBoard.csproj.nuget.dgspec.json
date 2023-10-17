@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[12.18.0, )"
             },
+            "BuildWebCompiler": {
+              "target": "Package",
+              "version": "[1.12.405, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[7.0.0, )"
