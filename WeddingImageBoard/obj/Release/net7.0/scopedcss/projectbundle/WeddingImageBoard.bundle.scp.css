@@ -84,6 +84,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     z-index: 1;
+    margin-top: 10%;
 }
 
     .custom-button:hover[b-fbrgg9u8gc] {
@@ -123,7 +124,7 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
     .custom-file-upload:hover[b-fbrgg9u8gc] {
@@ -215,21 +216,11 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
         transform: translateX(-50%);
     }
 
-.file-upload-button[b-fbrgg9u8gc] {
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-}
-
-    .file-upload-button + label[b-fbrgg9u8gc] {
-        padding: 10px 15px;
-        background-color: #808080;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        display: inline-block;
-        margin-top: 10px;
+    .upload-popup h3[b-fbrgg9u8gc] {
+        margin-top: 2%;
+        font-size: 12px;
+        color: grey;
+        white-space: nowrap;
     }
 
 .upload-progress-container[b-fbrgg9u8gc] {
@@ -458,10 +449,10 @@ body[b-fbrgg9u8gc] {
         }
 
         .custom-button[b-fbrgg9u8gc] {
-            margin-top: 10%;
             padding: 10px 20px;
             font-size: 16px;
             text-align: center;
+            margin-top: 20px;
             display: inline-block;
             width: auto;
         }
