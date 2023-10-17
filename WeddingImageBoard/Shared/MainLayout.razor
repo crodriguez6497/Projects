@@ -135,6 +135,7 @@
     }
 
 
+
     private void OpenImagePopup(string imageUrl)
     {
         popupImageUrl = imageUrl;
@@ -208,7 +209,11 @@
                 {
                     HttpHeaders = new BlobHttpHeaders
                     {
+<<<<<<< HEAD
                         CacheControl = "public, max-age=86400"
+=======
+                        CacheControl = "public, max-age=86400"  // Set Cache-Control to cache for 24 hours
+>>>>>>> c370516e98e2c7755a5841e06d1b75d29503996f
                     }
                 };
 
@@ -249,29 +254,33 @@
     {
         var sasUri = await GetBrowseSasUriFromFunction();
         BlobContainerClient containerClient = new BlobContainerClient(sasUri);
-        var allBlobItems = new List<BlobWithMetadata>();
 
+<<<<<<< HEAD
         int pageSize = 12;
         var blobResults = containerClient.GetBlobsAsync(BlobTraits.Metadata, BlobStates.All);
+=======
+        // Use built-in SDK pagination, get only the required page
+        var blobResults = containerClient.GetBlobsAsync(BlobTraits.Metadata, BlobStates.All).AsPages(default, itemsPerPage);
+>>>>>>> c370516e98e2c7755a5841e06d1b75d29503996f
 
-        var tasks = new List<Task<BlobWithMetadata>>();
-        await foreach (BlobItem blobItem in blobResults)
+        await foreach (var blobsPage in blobResults)
         {
-            tasks.Add(FetchBlobMetadata(containerClient, blobItem));
+            // If more pages available, hasMoreItems remains true
+            hasMoreItems = blobsPage.ContinuationToken != null;
+
+
+            var tasks = blobsPage.Values.Select(blobItem => FetchBlobMetadata(containerClient, blobItem)).ToList();
+
+            // Execute tasks in parallel
+            var results = await Task.WhenAll(tasks);
+
+            // No need to sort; they are already in desired order due to blob naming strategy
+            return results;
         }
 
-        // Execute tasks in parallel
-        var results = await Task.WhenAll(tasks);
-        allBlobItems.AddRange(results);
-
-        // Sort all blob items by creation time
-        allBlobItems = allBlobItems.OrderByDescending(b => b.CreationTime).ToList();
-
-        int startIndex = request.StartIndex;
-        int endIndex = Math.Min(startIndex + pageSize, allBlobItems.Count);
-
-        return allBlobItems.Skip(startIndex).Take(endIndex - startIndex);
+        return Enumerable.Empty<BlobWithMetadata>();
     }
+
 
     private async Task<BlobWithMetadata> FetchBlobMetadata(BlobContainerClient containerClient, BlobItem blobItem)
     {
@@ -294,20 +303,16 @@
     }
 
 
-    private async ValueTask OnScroll()
+    private async Task OnScroll()
     {
         if (!isLoading && hasMoreItems)
         {
-            // Calculate the new start index
-            int startIndex = displayedItems.Count;
-
             // Create a new request with the start index and page size
-            var request = new InfiniteScrollingItemsProviderRequest(startIndex, CancellationToken.None);
+            var request = new InfiniteScrollingItemsProviderRequest(displayedItems.Count, CancellationToken.None);
 
             await LoadItemsAsync(request);
         }
     }
-
 
     private async Task LoadItemsAsync(InfiniteScrollingItemsProviderRequest request)
     {
@@ -320,15 +325,11 @@
             if (newItems.Any())
             {
                 displayedItems.AddRange(newItems);
-                currentPage++;
-            }
-            else
-            {
-                hasMoreItems = false;
             }
 
             StateHasChanged();
         }
     }
+
 
 }
