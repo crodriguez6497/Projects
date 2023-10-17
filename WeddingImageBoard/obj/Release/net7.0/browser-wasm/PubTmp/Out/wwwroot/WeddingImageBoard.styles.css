@@ -96,6 +96,43 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     margin: 0;
 }
 
+.tabs-container[b-fbrgg9u8gc] {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2%;
+    white-space: nowrap;
+}
+
+.tab[b-fbrgg9u8gc] {
+    display: flex;
+    font-weight: bold;
+    color: grey;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .tab.active[b-fbrgg9u8gc] {
+        color: black;
+    }
+
+        .tab.active[b-fbrgg9u8gc]::before {
+            margin-top: -23%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: grey;
+        }
+
 
 
 

@@ -100,7 +100,7 @@ body, html {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-bottom: 2%;
     white-space: nowrap;
 }
@@ -116,6 +116,12 @@ body, html {
     cursor: pointer;
     transition: all 0.3s;
 }
+
+.tabs-container .tab:nth-child(1),
+.tabs-container .tab:nth-child(2) {
+    margin-right: 5%;
+}
+
 
     .tab.active {
         color: black;
@@ -436,6 +442,7 @@ body {
                 width: 100%;
                 height: auto;
             }
+
     }
 
     @media screen and (max-width: 768px) {
@@ -476,6 +483,11 @@ body {
 
         .background-image {
             background-size: cover;
+        }
+
+        .tabs-container .tab:nth-child(1),
+        .tabs-container .tab:nth-child(2) {
+            margin-right: -2%;
         }
 
         .gallery-container {
