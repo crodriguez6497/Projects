@@ -101,8 +101,20 @@
       "PackagePath": "staticwebassets\\pictures\\backgroundimage.jpg"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\gallery.png",
+      "PackagePath": "staticwebassets\\pictures\\gallery.png"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\honeymoon.png",
+      "PackagePath": "staticwebassets\\pictures\\honeymoon.png"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\upload.png",
       "PackagePath": "staticwebassets\\pictures\\upload.png"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\weddingwebsite.png",
+      "PackagePath": "staticwebassets\\pictures\\weddingwebsite.png"
     },
     {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\service-worker.js",

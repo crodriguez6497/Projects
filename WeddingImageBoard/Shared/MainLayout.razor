@@ -13,6 +13,7 @@
 @using Microsoft.Extensions.Configuration;
 @using WeddingImageBoard.InfiniteScrolling
 
+@inject NavigationManager NavManager
 @inject IConfiguration config
 @inject IJSRuntime JSRuntime
 @inject HttpClient Http
@@ -53,7 +54,7 @@
 <div class="top-container">
     <div class="header-container">
         <h1>Welcome to the wedding of</h1>
-        <h2>Mr. & Mrs. Rodriguez</h2>
+        <h2>Mr. & Mrs. Rodriguez!</h2>
 
         <!-- Show the upload popup when the button is clicked -->
         <button class="custom-button" @onclick="ShowUploadPopup">Upload Photos</button>
@@ -64,6 +65,22 @@
     </div>
 </div>
         <div class="border-line"> </div>
+        <div class="tabs-container">
+            <div class="tab active" @onclick="ShowGallery">
+                <img src="pictures/gallery.png" alt="Gallery Icon" width="16" height="16" />
+                Gallery
+            </div>
+            <div class="tab" @onclick="RedirectToWeddingWebsite">
+                <img src="pictures/weddingwebsite.png" alt="Website Icon" width="16" height="16" />
+                Website
+            </div>
+            <div class="tab" @onclick="RedirectToHoneymoon">
+                <img src="pictures/honeymoon.png" alt="Website Icon" width="16" height="16" />
+                Honeymoon Fund
+            </div>
+        </div>
+
+
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
                 <ItemTemplate Context="blobWithMetadata">
@@ -134,6 +151,27 @@
     private async Task<Uri> GetBrowseSasUriFromFunction()
     {
         return await Http.GetFromJsonAsync<Uri>("https://weddingwebsitefunctions.azurewebsites.net/api/GetBrowseContainerSAS");
+    }
+
+    bool showGallery = true;
+
+    void ShowGallery()
+    {
+        showGallery = true;
+    }
+
+    void RedirectToWeddingWebsite()
+    {
+        showGallery = false;
+        // Redirect to the website you want
+        NavManager.NavigateTo("https://www.zola.com/wedding/christianandsomer");
+    }
+
+    void RedirectToHoneymoon()
+    {
+        showGallery = false;
+        // Redirect to the website you want
+        NavManager.NavigateTo("https://www.zola.com/wedding/christianandsomer/registry");
     }
 
 
