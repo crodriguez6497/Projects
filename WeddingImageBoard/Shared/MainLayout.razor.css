@@ -461,8 +461,7 @@ body {
             width: 100%;
             max-width: 100%;
         }
-
-        .top-container {
+            .top-container {
             padding: 10px 10px;
         }
 
@@ -484,6 +483,7 @@ body {
         .background-image {
             background-size: cover;
         }
+
 
         .tabs-container .tab:nth-child(1),
         .tabs-container .tab:nth-child(2) {

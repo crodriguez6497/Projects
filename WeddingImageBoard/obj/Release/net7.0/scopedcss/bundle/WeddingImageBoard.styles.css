@@ -462,8 +462,7 @@ body[b-fbrgg9u8gc] {
             width: 100%;
             max-width: 100%;
         }
-
-        .top-container[b-fbrgg9u8gc] {
+            .top-container[b-fbrgg9u8gc] {
             padding: 10px 10px;
         }
 
@@ -485,6 +484,7 @@ body[b-fbrgg9u8gc] {
         .background-image[b-fbrgg9u8gc] {
             background-size: cover;
         }
+
 
         .tabs-container .tab:nth-child(1)[b-fbrgg9u8gc],
         .tabs-container .tab:nth-child(2)[b-fbrgg9u8gc] {
