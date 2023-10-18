@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
+using Microsoft.WindowsAzure.Storage;
+using Azure;
+using System.Reflection.Metadata;
+using System.Threading.Tasks;
 
 namespace WeddingWebsiteThumbnailFunction
 {
@@ -14,34 +18,38 @@ namespace WeddingWebsiteThumbnailFunction
     {
         [FunctionName("Function1")]
         [return: Microsoft.Azure.WebJobs.Table("WeddingStuff", Connection = "StorageConnectionString")]
-        public static async Task<MyTableEntity> Run([BlobTrigger("CONTAINER_NAME/{name}", Connection = "StorageConnectionString")]Stream myBlob, string name, ILogger log)
+        public static async Task<MyTableEntity> Run([BlobTrigger("ORIGINAL_CONTAINER_NAME/{name}", Connection = "StorageConnectionString")]Stream myBlob, string name, ILogger log)
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
             // Get the original blob URL
-            string originalBlobUrl = "https://ai102form2287314696.blob.core.windows.net/margies-images/" + name;
+            string originalBlobUrl = "FULL_URL_TO_CONTAINER" + name;
 
-            //string connectionString = "your_connection_string";
-            //BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
+            // get original blob properties so you can get the name from metadata
+            BlobServiceClient blobServiceClient = new BlobServiceClient("STORAGE_CONNECTION_STRING");
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("ORIGINAL_CONTAINER_NAME");
+            BlobClient originalBlobClient = containerClient.GetBlobClient(name);
+            BlobProperties properties = originalBlobClient.GetProperties();
 
-            //string containerName = "your_container_name";
-            //string blobName = "your_blob_name";
+            // ========== THIS IS FOR TESTING DO NOT USE ==========
+            if (!properties.Metadata.ContainsKey("Name")) {
 
-            //BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-            //BlobClient blobClient = containerClient.GetBlobClient(blobName);
+                var metadata = new Dictionary<string, string>
+                {
+                    { "Name", "Bobbi" },
+                };
 
-            //BlobProperties properties = blobClient.GetProperties();
+                originalBlobClient.SetMetadata(metadata);
+            }
+            // ========== END TESTING ==========
 
-            //string userName = "";
-            //// if name in properties add name else dont
-            //if (properties.Metadata.ContainsKey("userName")) {
-            //    userName = properties.Metadata["your_metadata_key"];
-            //}
+            // if name in properties add name else dont
+            string userName = properties.Metadata.ContainsKey("Name") ? properties.Metadata["Name"] : "";
 
             // generate thumbnail
             // required to access vision service
-            ApiKeyServiceClientCredentials credentials = new ApiKeyServiceClientCredentials("AI_CREDENTIAL");
-            var visionClient = new ComputerVisionClient(credentials) { Endpoint = "https://multiaiservices-xh1.cognitiveservices.azure.com/" };
+            ApiKeyServiceClientCredentials credentials = new ApiKeyServiceClientCredentials("AI_KEY");
+            var visionClient = new ComputerVisionClient(credentials) { Endpoint = "AI_ENDPOINT" };
 
             // put our image into memory stream
             var thumbnailStream = await visionClient.GenerateThumbnailInStreamAsync(800, 800, myBlob, true);//new MemoryStream(memoryStream.ToArray()), true);
@@ -49,18 +57,18 @@ namespace WeddingWebsiteThumbnailFunction
             // add to thumbnail container
             string blobName = Guid.NewGuid().ToString();
 
-            BlobClient blobClient = new BlobClient("STORAGE_CREDENTIAL", "thumbnail-images", blobName);
+            BlobClient blobClient = new BlobClient("STORAGE_CONNECTION_STRING", "thumbnail-images", blobName);
 
             await blobClient.UploadAsync(thumbnailStream, true);
 
             // add to table
             // Create an instance of the table entity
             var tableEntity = new MyTableEntity {
-                PartitionKey = DateTime.Now.ToShortDateString(),
+                PartitionKey = DateTime.Now.ToString("yyyyMMddHHmmss"),
                 RowKey = blobName,
                 fullSizeUrl = originalBlobUrl,
                 thumbnailUrl = blobClient.Uri.ToString(),
-                name = name
+                name = userName
             };
 
             return tableEntity;
