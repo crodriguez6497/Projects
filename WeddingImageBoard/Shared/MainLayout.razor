@@ -1,4 +1,4 @@
-﻿﻿@using System
+﻿@using System
 @using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
@@ -21,30 +21,45 @@
 
 @if (showUploadPopup)
 {
-    <div class="full-screen-flex">
-        <div class="upload-popup">
+    <link rel="stylesheet" href="css/Upload.css" />
+    <div class="full-screen-flex" @onclick="CloseUploadPopup">
+        <div class="upload-popup" @onclick="UploadBoxClicked">
+
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
 
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
             <h3>Please limit upload to a maximum of 50 images</h3>
             <InputFile @ref="inputFile" MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
-            <div class="upload-progress-container" style="@(showProgressBar ? "display:block;" : "display:none;")">
-                <div class="upload-progress" style="width:@(progressPercentage + "%")"></div>
+
+            <div class="file-upload-scroll-container">
+                @foreach (var fileState in fileUploadStates)
+                {
+                    <div class="file-upload-item">
+                        <span class="file-name">@fileState.File.Name</span>
+                        <div class="upload-progress-container">
+                            <div class="upload-progress" style="width:@(fileState.Progress + "%")"></div>
+                        </div>
+                    </div>
+                }
             </div>
+
             <div class="upload-success-message" style="@(showSuccessMessage ? "display:block;" : "display:none;")">
                 Upload Successful!
             </div>
-            <div class="close-btn" @onclick="CloseUploadPopup">X</div>
         </div>
     </div>
 }
 
+
+
+
+
 @if (showImagePopup)
 {
-    <div class="image-popup open">
+    <link rel="stylesheet" href="css/ImagePopup.css" />
+    <div class="image-popup open" @onclick="CloseImagePopup">
         <div class="image-popup-content">
-            <span class="image-close" @onclick="CloseImagePopup">×</span>
-            <img src="@popupImageUrl" alt="Full-sized Image" />
+            <img src="@popupImageUrl" alt="Full-sized Image" @onclick="ImageClicked" />
         </div>
     </div>
 }
@@ -57,15 +72,12 @@
             <div class="header-container">
                 <h1>Welcome to the wedding of</h1>
                 <h2>Mr. & Mrs. Rodriguez!</h2>
-
-                <!-- Show the upload popup when the button is clicked -->
                 <button class="custom-button" @onclick="ShowUploadPopup">Upload Photos</button>
-
                 <div class="background-image">
-                    <!-- This is where the pretty picture will be placed as a background -->
                 </div>
             </div>
         </div>
+
         <div class="border-line"> </div>
         <div class="tabs-container">
             <div class="tab active" @onclick="ShowGallery">
@@ -81,7 +93,6 @@
                 Honeymoon Fund
             </div>
         </div>
-
 
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
@@ -128,21 +139,23 @@
 
     private bool showProgressBar = false;
     private bool showSuccessMessage = false;
-    private int progressPercentage = 0;
-
-    private InputFile inputFile;  // Reference to the InputFile component
-    private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
     private bool showUploadPopup = false;
-    private string photoName = "";
-    private string popupImageUrl = null;
     private bool showImagePopup = false;
-
-    private int currentPage = 1;
-    private int itemsPerPage = 12;
-    private List<BlobWithMetadata> displayedItems = new List<BlobWithMetadata>();
     private bool isLoading = false;
     private bool hasMoreItems = true;
-
+    private bool showGallery = true;
+    bool imageClicked = false;
+    bool uploadBoxClicked = false;
+    private int progressPercentage = 0;
+    private int currentPage = 1;
+    private int itemsPerPage = 12;
+    private string uploadStatusMessage = "";
+    private string photoName = "";
+    private string popupImageUrl = null;
+    private InputFile inputFile;
+    private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
+    private List<BlobWithMetadata> displayedItems = new List<BlobWithMetadata>();
+    private List<FileUploadState> fileUploadStates = new List<FileUploadState>();
 
     private async Task<Uri> GetUploadSasUriFromFunction()
     {
@@ -153,8 +166,6 @@
     {
         return await Http.GetFromJsonAsync<Uri>("https://weddingwebsitefunctions.azurewebsites.net/api/GetBrowseContainerSAS");
     }
-
-    bool showGallery = true;
 
     void ShowGallery()
     {
@@ -175,108 +186,125 @@
         NavManager.NavigateTo("https://www.zola.com/wedding/christianandsomer/registry");
     }
 
-
     private void OpenImagePopup(string imageUrl)
     {
         popupImageUrl = imageUrl;
         showImagePopup = true;
     }
 
-    private void CloseImagePopup()
+    private void CloseImagePopup(Microsoft.AspNetCore.Components.Web.MouseEventArgs e)
     {
-        showImagePopup = false;
+        if (!imageClicked)
+        {
+            showImagePopup = false;
+        }
+        imageClicked = false;
     }
 
-    // Show the upload popup
     private void ShowUploadPopup()
     {
         showUploadPopup = true;
     }
 
-    // Close the upload popup
     private void CloseUploadPopup()
     {
+        if (!uploadBoxClicked)
+        {
         showUploadPopup = false;
-        photoName = "";
+        showProgressBar = false;
         showSuccessMessage = false;
-        progressPercentage = 0;
+        fileUploadStates.Clear();
         StateHasChanged();
     }
+    uploadBoxClicked = false;
+}
 
     private async Task TriggerFileInput()
     {
         await JSRuntime.InvokeVoidAsync("triggerFilePicker");
     }
 
-    // Handle the selected files
     private async Task HandleFileSelected(InputFileChangeEventArgs e)
     {
         showProgressBar = true;
         showSuccessMessage = false;
         StateHasChanged();
 
-        var files = e.GetMultipleFiles(50).ToList();
-        await UploadPhotosAsync(files);
+        var uploadTasks = e.GetMultipleFiles().Select(file =>
+        {
+            var fileState = new FileUploadState { File = file, Progress = 0 };
+            fileUploadStates.Add(fileState);
+            return UploadPhotoAsync(fileState);
+        }).ToList();
 
-        showProgressBar = false;
+        await Task.WhenAll(uploadTasks);
+        fileUploadStates.Clear();
         showSuccessMessage = true;
         StateHasChanged();
-        await Task.Delay(2000);
-
+        await Task.Delay(3000);
+        showUploadPopup = false;
         CloseUploadPopup();
-        currentPage = 1;
-        displayedItems.Clear();
-        hasMoreItems = true;
-        var request = new InfiniteScrollingItemsProviderRequest(0, CancellationToken.None);
-        await LoadItemsAsync(request);
+        showSuccessMessage = false;
+        //await JSRuntime.InvokeVoidAsync("eval", "location.reload()");
+    }
 
+
+    private async Task UploadPhotoAsync(FileUploadState fileState)
+    {
+        var file = fileState.File;
+
+        var buffer = new byte[file.Size];
+        await file.OpenReadStream(maxAllowedSize: 1024 * 500000).ReadAsync(buffer);
+
+        string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
+        Uri sasUri = await GetUploadSasUriFromFunction();
+        BlobClient blobClient = new BlobClient(sasUri);
+
+        using (var stream = new MemoryStream(buffer))
+        {
+            var uploadOptions = new BlobUploadOptions
+                {
+                    ProgressHandler = new Progress<long>(bytesTransferred =>
+                    {
+                        UpdateProgress(fileState, bytesTransferred, buffer.Length);
+                    })
+                };
+
+            await blobClient.UploadAsync(stream, uploadOptions);
+        }
+
+        // Store the entered name as metadata
+        var metadata = new Dictionary<string, string>
+    {
+        {"Name", photoName}
+    };
+        await blobClient.SetMetadataAsync(metadata);
+
+        fileState.Progress = 100;
         StateHasChanged();
     }
 
 
 
-
-    private async Task UploadPhotosAsync(List<IBrowserFile> files)
+    private void UpdateProgress(FileUploadState fileState, long bytesTransferred, long totalBytes)
     {
-        int totalFiles = files.Count;
-        int uploadedFiles = 0;
+        // Calculate the progress percentage
+        double progressPercentage = ((double)bytesTransferred / totalBytes) * 100;
 
-        foreach (var file in files)
-        {
-            var buffer = new byte[file.Size];
-            await file.OpenReadStream(maxAllowedSize: 1024 * 500000).ReadAsync(buffer);
-
-            string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
-
-            // Get the SAS URI from the Azure Function
-            Uri sasUri = await GetUploadSasUriFromFunction();
-
-
-            BlobClient blobClient = new BlobClient(sasUri);
-
-            using (var stream = new MemoryStream(buffer))
-            {
-                await blobClient.UploadAsync(stream, true);
-            }
-
-            // Store the entered name as metadata
-            var metadata = new Dictionary<string, string>
-        {
-            {"Name", photoName}
-        };
-            await blobClient.SetMetadataAsync(metadata);
-
-            uploadedFiles++;
-            progressPercentage = (int)((uploadedFiles / (float)totalFiles) * 100);
-            StateHasChanged();
-        }
+        fileState.Progress = (int)progressPercentage;
+        StateHasChanged();
     }
-
 
     private string GetBlobUri(string blobName)
     {
-        string containerUri = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainer/";
+        string containerUri = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest/";
         return containerUri + blobName;
+    }
+
+    public class FileUploadState
+    {
+        public IBrowserFile File { get; set; }
+        public int Progress { get; set; } = 0;
     }
 
     public class BlobWithMetadata
@@ -301,7 +329,6 @@
             tasks.Add(FetchBlobMetadata(containerClient, blobItem));
         }
 
-        // Execute tasks in parallel
         var results = await Task.WhenAll(tasks);
         allBlobItems.AddRange(results);
 
@@ -327,13 +354,11 @@
             };
     }
 
-
     protected override async Task OnInitializedAsync()
     {
         var request = new InfiniteScrollingItemsProviderRequest(0, CancellationToken.None); // Initialize with appropriate values
         await LoadItemsAsync(request);
     }
-
 
     private async ValueTask OnScroll()
     {
@@ -348,7 +373,6 @@
             await LoadItemsAsync(request);
         }
     }
-
 
     private async Task LoadItemsAsync(InfiniteScrollingItemsProviderRequest request)
     {
@@ -372,4 +396,13 @@
         }
     }
 
+    private void ImageClicked()
+    {
+        imageClicked = true;
+    }
+
+    private void UploadBoxClicked()
+    {
+        uploadBoxClicked = true;
+    }
 }

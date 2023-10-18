@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XfeRt5My20zjg06T94HZD7sF4sDiNpy9s1aU08J+tXUrwlURejmwbVK17cknUto1sGHig97DS6DzlcGgJylpxA==",
+  "dgSpecHash": "8CGxf8G5X7gdQurTUg/h6EqH3lkVp0RGiZx3MI+WVoV0gh8cDygL5kv8eXedQs3ALfg5eNxwwnyamN3eiQCb7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\WeddingImageBoard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crodr\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
+    "C:\\Users\\crodr\\.nuget\\packages\\azure.data.tables\\12.8.1\\azure.data.tables.12.8.1.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\azure.identity\\1.10.2\\azure.identity.1.10.2.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\azure.security.keyvault.secrets\\4.5.0\\azure.security.keyvault.secrets.4.5.0.nupkg.sha512",
     "C:\\Users\\crodr\\.nuget\\packages\\azure.storage.blobs\\12.18.0\\azure.storage.blobs.12.18.0.nupkg.sha512",

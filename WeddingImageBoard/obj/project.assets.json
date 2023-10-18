@@ -24,6 +24,23 @@
           }
         }
       },
+      "Azure.Data.Tables/12.8.1": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Identity/1.10.2": {
         "type": "package",
         "dependencies": {
@@ -1713,6 +1730,23 @@
         },
         "runtime": {
           "lib/net6.0/Azure.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Azure.Data.Tables/12.8.1": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
             "related": ".xml"
           }
         }
@@ -3505,6 +3539,22 @@
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Data.Tables/12.8.1": {
+      "sha512": "UsJVAV2omsi6Ws5zqV2/TMP2GQjFlmjiFXnYKV5u5+9MQ588VDkvvlh4TGzLRAG2DxVx7rdgjtQ9baTlz/+log==",
+      "type": "package",
+      "path": "azure.data.tables/12.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.data.tables.12.8.1.nupkg.sha512",
+        "azure.data.tables.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Data.Tables.dll",
+        "lib/netstandard2.0/Azure.Data.Tables.xml"
       ]
     },
     "Azure.Identity/1.10.2": {
@@ -7291,6 +7341,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Azure.Data.Tables >= 12.8.1",
       "Azure.Identity >= 1.10.2",
       "Azure.Security.KeyVault.Secrets >= 4.5.0",
       "Azure.Storage.Blobs >= 12.18.0",
@@ -7347,6 +7398,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Azure.Data.Tables": {
+            "target": "Package",
+            "version": "[12.8.1, )"
+          },
           "Azure.Identity": {
             "target": "Package",
             "version": "[1.10.2, )"

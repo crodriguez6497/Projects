@@ -137,45 +137,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
             border-radius: 5px;
         }
 
-.full-screen-flex[b-fbrgg9u8gc] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-}
-
-.input-file-hidden[b-fbrgg9u8gc] {
-    display: none;
-}
-
-.custom-file-upload[b-fbrgg9u8gc] {
-    padding: 10px 15px;
-    background-color: rgba(51, 51, 51, 0.6);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 20%;
-}
-
-    .custom-file-upload:hover[b-fbrgg9u8gc] {
-        background-color: rgba(51, 51, 51, 0.8);
-    }
-
-.name-input-box[b-fbrgg9u8gc]::placeholder {
-    text-align: center;
-}
-.name-input-box[b-fbrgg9u8gc] {
-    border-radius: 10px;
-}
-
 .gallery-container[b-fbrgg9u8gc] {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -223,146 +184,6 @@ body[b-fbrgg9u8gc], html[b-fbrgg9u8gc] {
     color: white;
     background-color: rgba(0,0,0,0.5);
 }
-
-.upload-popup[b-fbrgg9u8gc] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255);
-    border: 2px dashed grey;
-    padding: 80px 40px 40px;
-    width: 60%;
-    height: 40%;
-    border-radius: 10px;
-    position: relative;
-}
-
-    .upload-popup[b-fbrgg9u8gc]::before {
-        margin-top: 5%;
-        content: '';
-        background: url('./pictures/upload.png') no-repeat center top;
-        background-size: contain;
-        width: 120px;
-        height: 120px;
-        display: block;
-        position: absolute;
-        top: -60px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .upload-popup h3[b-fbrgg9u8gc] {
-        margin-top: 2%;
-        font-size: 12px;
-        color: grey;
-        white-space: nowrap;
-    }
-
-.upload-progress-container[b-fbrgg9u8gc] {
-    width: 50%;
-    height: 20px;
-    background-color: #e0e0e0;
-    margin-top: 15px;
-}
-
-.upload-progress[b-fbrgg9u8gc] {
-    height: 100%;
-    background-color: #5d805e;
-}
-
-.upload-success-message[b-fbrgg9u8gc] {
-    color: green;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.drag-text[b-fbrgg9u8gc] {
-    font-size: 34px;
-    margin-bottom: 20px;
-    color: grey;
-}
-
-.or-text[b-fbrgg9u8gc] {
-    margin: 20px 0;
-    font-size: 26px;
-    text-align: center;
-    color: grey;
-}
-
-.close-btn[b-fbrgg9u8gc] {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background-color: #e5e5e5;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-    .close-btn:hover[b-fbrgg9u8gc] {
-        background-color: #c5c5c5;
-    }
-
-/* image pop-up start */
-.image-popup[b-fbrgg9u8gc] {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-    .image-popup.open[b-fbrgg9u8gc] {
-        display: flex;
-    }
-
-.image-popup-content[b-fbrgg9u8gc] {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 15px;
-    box-sizing: border-box;
-    display: inline-block;
-    border: 2px solid #000;
-    max-width: 95vw;
-    max-height: 95vh;
-    overflow: hidden;
-}
-
-    .image-popup-content img[b-fbrgg9u8gc] {
-        width: auto;
-        max-width: 100%;
-        height: auto;
-        max-height: 100%;
-        display: block;
-        margin: auto;
-    }
-
-.image-close[b-fbrgg9u8gc] {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-/* image pop-up end */
-
-
 
 /* Image loading graphic */
 body[b-fbrgg9u8gc] {
@@ -424,28 +245,6 @@ body[b-fbrgg9u8gc] {
     }
 }
 
-/* End of image loading graphic */
-
-@media screen and (orientation: landscape) {
-    .image-popup-content[b-fbrgg9u8gc] {
-        max-width: 100vh;
-        max-height: 100vw;
-    }
-}
-
-    @media only screen and (max-width: 480px) {
-        .image-popup-content[b-fbrgg9u8gc] {
-            padding: 10px;
-            width: 90vh;
-            height: auto;
-        }
-
-            .image-popup-content img[b-fbrgg9u8gc] {
-                width: 100%;
-                height: auto;
-            }
-
-    }
 
     @media screen and (max-width: 768px) {
 
@@ -505,39 +304,12 @@ body[b-fbrgg9u8gc] {
             margin-top: 20px;
             display: inline-block;
             width: auto;
-        }
+        }        
 
-        .upload-popup[b-fbrgg9u8gc] {
-            padding: 50px;
-            height: 70%;
-            width: 90%;
-        }
-
-            .upload-popup[b-fbrgg9u8gc]::before {
-                width: 100px;
-                height: 100px;
-                top: 2%;
-            }
-
-        .drag-text[b-fbrgg9u8gc],
-        .or-text[b-fbrgg9u8gc] {
-            font-size: 24px;
-        }
 
         .file-upload-button + label[b-fbrgg9u8gc] {
             padding: 8px 12px;
             font-size: 14px;
         }
-
-        .image-popup-content[b-fbrgg9u8gc] {
-            padding: 15px;
-            width: 92vw;
-            height: auto;
-            max-height: 90vh;
-        }
-
-            .image-popup-content img[b-fbrgg9u8gc] {
-                width: auto;
-                height: auto;
-            }
+                
     }

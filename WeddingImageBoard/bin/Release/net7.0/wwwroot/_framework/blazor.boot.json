@@ -8,6 +8,7 @@
   "resources": {
     "assembly": {
       "Azure.Core.dll": "sha256-n99lo2Sb2Qmi7GGC7Veocf+M704XRp8f+PBXlpt9W8w=",
+      "Azure.Data.Tables.dll": "sha256-I35gdoqFH+gZHV\/Mxjm1eyjFFIwSrYJ9NH5P6jtx524=",
       "Azure.Identity.dll": "sha256-5Xh9uYAQS2ilf2Z4WYX46UfPQhcGCOMGpjluGF1+kho=",
       "Azure.Security.KeyVault.Secrets.dll": "sha256-EnZiWe07IgJKaGinesH2EyjOgiqMnwQ2Vn92mm3k48c=",
       "Azure.Storage.Blobs.dll": "sha256-sdJNmS21rBY0TdSuxzX1zg\/Kl21JPOLzJgS1MOdZaZ4=",
@@ -232,13 +233,13 @@
       "mscorlib.dll": "sha256-X+o60j6cZnlI2vFFjdH81yYTAxx13\/wqnNSWTKbDsyw=",
       "netstandard.dll": "sha256-Cr6slBs\/R2v2t\/vecFDHbQHakbEhar0adYu0YemwiXI=",
       "System.Private.CoreLib.dll": "sha256-dDw5nzGJhW1jOjGfSJcs\/Mi4KQ+DZygXnoK+vJ+jHyk=",
-      "WeddingImageBoard.dll": "sha256-JIA3PpH30afkz5x8gsAKL0NNIqnIS6+Z65kdG24zd7A="
+      "WeddingImageBoard.dll": "sha256-9OwSkgyUefVQlxlKsJGP0oy6AqdQctmt66nvxt9uGu8="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "WeddingImageBoard.pdb": "sha256-VDDd8XSFMvjgCRPsP5h8Je8gyRuhrUKiZfJ+Lw3SS9g="
+      "WeddingImageBoard.pdb": "sha256-WfXLb51cDupSryMGvBQoctcDZ9Dbqh5EkBw7ufDQSXc="
     },
     "runtime": {
       "dotnet.7.0.11.92hl276278.js": "sha256-RtIVigdAD1mUvR4pxoKyD8kcQgw4INP81v+PVSqkeQY=",

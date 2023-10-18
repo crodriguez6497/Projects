@@ -23,7 +23,7 @@ namespace TestingSAS
 
             string connectionString = System.Environment.GetEnvironmentVariable("PhotoStore_ConnString");
 
-            string containerName = "weddingphotoscontainer";
+            string containerName = "weddingphotoscontainertest";
 
             string blobName = System.Guid.NewGuid().ToString(); // Generate a new unique file name
 
@@ -54,7 +54,7 @@ namespace TestingSAS
 
             string connectionString = System.Environment.GetEnvironmentVariable("PhotoStore_ConnString");
 
-            string containerName = "weddingphotoscontainer";
+            string containerName = "weddingphotoscontainertest";
 
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);

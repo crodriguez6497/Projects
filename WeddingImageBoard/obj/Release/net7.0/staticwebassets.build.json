@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wrz40WVdV2FDmO+dhzcKAhx6aqJA6pEo7thk0tPay14=",
+  "Hash": "jM3+xCjjDgDTpe22cz8Tz19R9KPVVbmSeyG8QGtioxc=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\azure.core\\1.35.0\\lib\\net6.0\\Azure.Core.dll"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Azure.Data.Tables.dll",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Azure.Data.Tables.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\azure.data.tables\\12.8.1\\lib\\netstandard2.0\\Azure.Data.Tables.dll"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Azure.Identity.dll",
@@ -6766,6 +6783,23 @@
       "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\System.IO.Pipelines.dll"
     },
     {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\Qk5rjjet.gz",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Azure.Data.Tables.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Azure.Data.Tables.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Azure.Data.Tables.dll"
+    },
+    {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\qOqDJGNV.gz",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Computed",
@@ -8126,6 +8160,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\ImagePopup.css",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/ImagePopup.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ImagePopup.css"
+    },
+    {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.css",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Discovered",
@@ -8328,6 +8379,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\Upload.css",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/Upload.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Upload.css"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.otf",

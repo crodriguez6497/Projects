@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\WeddingImageBoard.styles.css"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\ImagePopup.css",
+      "PackagePath": "staticwebassets\\css\\ImagePopup.css"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\Upload.css",
+      "PackagePath": "staticwebassets\\css\\Upload.css"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
