@@ -38,8 +38,8 @@
         color: #333;
         font-size: 18px;
         text-align: left;
-        margin-top: 92.5%;
-        padding-left: 2%;
+        margin-top: 92%;
+        padding-left: 3%;
         font-weight: 500;
         color: white;
         font-family: Calibri, sans-serif;
@@ -50,16 +50,5 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 5px;
         justify-content: center;
-    }
-    .text-content {
-        margin-top: 0%;
-        padding-left: 2%;
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 900px) and (orientation: landscape) {
-    .text-content {
-        margin-top: 89%;
     }
 }
