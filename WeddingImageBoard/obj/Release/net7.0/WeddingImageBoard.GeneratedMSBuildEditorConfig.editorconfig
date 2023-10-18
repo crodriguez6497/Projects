@@ -9,29 +9,29 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = WeddingImageBoard
 build_property.RootNamespace = WeddingImageBoard
-build_property.ProjectDir = C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\
+build_property.ProjectDir = C:\Users\Xavier\Desktop\Projects\Chris_Fork\WeddingImageBoard\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard
+build_property.MSBuildProjectDirectory = C:\Users\Xavier\Desktop\Projects\Chris_Fork\WeddingImageBoard
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/crodr/Documents/GitHub/Projects/WeddingImageBoard/App.razor]
+[C:/Users/Xavier/Desktop/Projects/Chris_Fork/WeddingImageBoard/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/crodr/Documents/GitHub/Projects/WeddingImageBoard/InfiniteScrolling/InfiniteScrolling.razor]
+[C:/Users/Xavier/Desktop/Projects/Chris_Fork/WeddingImageBoard/InfiniteScrolling/InfiniteScrolling.razor]
 build_metadata.AdditionalFiles.TargetPath = SW5maW5pdGVTY3JvbGxpbmdcSW5maW5pdGVTY3JvbGxpbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/crodr/Documents/GitHub/Projects/WeddingImageBoard/Pages/Index.razor]
+[C:/Users/Xavier/Desktop/Projects/Chris_Fork/WeddingImageBoard/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/crodr/Documents/GitHub/Projects/WeddingImageBoard/_Imports.razor]
+[C:/Users/Xavier/Desktop/Projects/Chris_Fork/WeddingImageBoard/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/crodr/Documents/GitHub/Projects/WeddingImageBoard/Shared/MainLayout.razor]
+[C:/Users/Xavier/Desktop/Projects/Chris_Fork/WeddingImageBoard/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-fbrgg9u8gc

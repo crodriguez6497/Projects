@@ -1,131 +1,131 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\qD0+DJ4K.gz",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\0td32NYL.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\scopedcss\\bundle\\WeddingImageBoard.styles.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\obj\\Release\\net7.0\\scopedcss\\bundle\\WeddingImageBoard.styles.css",
       "PackagePath": "staticwebassets\\WeddingImageBoard.styles.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.css",
       "PackagePath": "staticwebassets\\css\\loadingscreen.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.min.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.min.css",
       "PackagePath": "staticwebassets\\css\\loadingscreen.min.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.scss",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\loadingscreen.scss",
       "PackagePath": "staticwebassets\\css\\loadingscreen.scss"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\README.md",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\README.md",
       "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.otf",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.otf",
       "PackagePath": "staticwebassets\\fonts\\Breezeblocks.otf"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.ttf",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\fonts\\Breezeblocks.ttf",
       "PackagePath": "staticwebassets\\fonts\\Breezeblocks.ttf"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html.__projection.g.js",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\index.html.__projection.g.js",
       "PackagePath": "staticwebassets\\index.html.__projection.g.js"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\infinite-scrolling.js",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\infinite-scrolling.js",
       "PackagePath": "staticwebassets\\infinite-scrolling.js"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\manifest.json",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\manifest.json",
       "PackagePath": "staticwebassets\\manifest.json"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\backgroundimage.jpg",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\backgroundimage.jpg",
       "PackagePath": "staticwebassets\\pictures\\backgroundimage.jpg"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\favicon.png",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\favicon.png",
       "PackagePath": "staticwebassets\\pictures\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\gallery.png",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\gallery.png",
       "PackagePath": "staticwebassets\\pictures\\gallery.png"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\honeymoon.png",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\honeymoon.png",
       "PackagePath": "staticwebassets\\pictures\\honeymoon.png"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\upload.png",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\upload.png",
       "PackagePath": "staticwebassets\\pictures\\upload.png"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\weddingwebsite.png",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\pictures\\weddingwebsite.png",
       "PackagePath": "staticwebassets\\pictures\\weddingwebsite.png"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\service-worker.js",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\service-worker.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\service-worker.published.js",
+      "Id": "C:\\Users\\Xavier\\Desktop\\Projects\\Chris_Fork\\WeddingImageBoard\\wwwroot\\service-worker.published.js",
       "PackagePath": "staticwebassets\\service-worker.published.js"
     },
     {
