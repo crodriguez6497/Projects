@@ -34,8 +34,8 @@ namespace FunctionApp2
             if (!int.TryParse(req.Query["size"], out size)) { size = int.MaxValue; }
 
             // connect to table
-            var client = new TableServiceClient("DefaultEndpointsProtocol=https;AccountName=ai102form2287314696;AccountKey=d+BzdI7MJA7rGCAtbKcvM9D6jVXVuyTW9ADmGUWQw9IzIFAbWDb1Mh6b07DQg08+vVHuluswM/VR+AStWxll3A==;EndpointSuffix=core.windows.net");
-            var tableClient = client.GetTableClient("WeddingStuff");
+            var client = new TableServiceClient("STORAGE_CONNECTION_STRING");
+            var tableClient = client.GetTableClient("TABLE_NAME");
 
             // queries table
             var entities = tableClient.Query<Azure.Data.Tables.TableEntity>();
