@@ -1,4 +1,4 @@
-﻿@using System
+﻿﻿@using System
 @using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
@@ -19,7 +19,8 @@
 @inject HttpClient Http
 @inherits LayoutComponentBase
 
-@if (showUploadPopup) {
+@if (showUploadPopup)
+{
     <div class="full-screen-flex">
         <div class="upload-popup">
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
@@ -38,10 +39,11 @@
     </div>
 }
 
-@if (showImagePopup) {
+@if (showImagePopup)
+{
     <div class="image-popup open">
         <div class="image-popup-content">
-             <span class="image-close" @onclick="CloseImagePopup">×</span>
+            <span class="image-close" @onclick="CloseImagePopup">×</span>
             <img src="@popupImageUrl" alt="Full-sized Image" />
         </div>
     </div>
@@ -51,19 +53,19 @@
 
 <div class="background-col">
     <div class="main-container">
-<div class="top-container">
-    <div class="header-container">
-        <h1>Welcome to the wedding of</h1>
-        <h2>Mr. & Mrs. Rodriguez!</h2>
+        <div class="top-container">
+            <div class="header-container">
+                <h1>Welcome to the wedding of</h1>
+                <h2>Mr. & Mrs. Rodriguez!</h2>
 
-        <!-- Show the upload popup when the button is clicked -->
-        <button class="custom-button" @onclick="ShowUploadPopup">Upload Photos</button>
+                <!-- Show the upload popup when the button is clicked -->
+                <button class="custom-button" @onclick="ShowUploadPopup">Upload Photos</button>
 
-        <div class="background-image">
-            <!-- This is where the pretty picture will be placed as a background -->
+                <div class="background-image">
+                    <!-- This is where the pretty picture will be placed as a background -->
+                </div>
+            </div>
         </div>
-    </div>
-</div>
         <div class="border-line"> </div>
         <div class="tabs-container">
             <div class="tab active" @onclick="ShowGallery">
@@ -111,7 +113,7 @@
 
             </InfiniteScrolling>
         </div>
-</div>
+    </div>
 </div>
 
 
