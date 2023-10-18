@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jM3+xCjjDgDTpe22cz8Tz19R9KPVVbmSeyG8QGtioxc=",
+  "Hash": "s2/ocJwPW4HB4yslDb2CLfQTGfbVhAM50Y3l+v8TJYg=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -8160,6 +8160,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\GalleryContainer.css",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/GalleryContainer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\GalleryContainer.css"
+    },
+    {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\ImagePopup.css",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Discovered",
@@ -8379,6 +8396,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\TabContainer.css",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/TabContainer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TabContainer.css"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\TopContainer.css",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/TopContainer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TopContainer.css"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\Upload.css",

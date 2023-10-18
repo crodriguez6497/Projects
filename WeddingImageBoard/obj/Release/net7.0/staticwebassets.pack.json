@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\WeddingImageBoard.styles.css"
     },
     {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\GalleryContainer.css",
+      "PackagePath": "staticwebassets\\css\\GalleryContainer.css"
+    },
+    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\ImagePopup.css",
       "PackagePath": "staticwebassets\\css\\ImagePopup.css"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\TabContainer.css",
+      "PackagePath": "staticwebassets\\css\\TabContainer.css"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\TopContainer.css",
+      "PackagePath": "staticwebassets\\css\\TopContainer.css"
     },
     {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\css\\Upload.css",

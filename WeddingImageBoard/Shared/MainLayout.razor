@@ -65,9 +65,9 @@
 }
 
 
-
 <div class="background-col">
     <div class="main-container">
+        <link rel="stylesheet" href="css/TopContainer.css" />
         <div class="top-container">
             <div class="header-container">
                 <h1>Welcome to the wedding of</h1>
@@ -79,6 +79,8 @@
         </div>
 
         <div class="border-line"> </div>
+
+        <link rel="stylesheet" href="css/TabContainer.css" />
         <div class="tabs-container">
             <div class="tab active" @onclick="ShowGallery">
                 <img src="pictures/gallery.png" alt="Gallery Icon" width="16" height="16" />
@@ -94,6 +96,7 @@
             </div>
         </div>
 
+        <link rel="stylesheet" href="css/GalleryContainer.css" />
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
                 <ItemTemplate Context="blobWithMetadata">
