@@ -210,14 +210,14 @@
     {
         if (!uploadBoxClicked)
         {
-        showUploadPopup = false;
-        showProgressBar = false;
-        showSuccessMessage = false;
-        fileUploadStates.Clear();
-        StateHasChanged();
+            showUploadPopup = false;
+            showProgressBar = false;
+            showSuccessMessage = false;
+            fileUploadStates.Clear();
+            StateHasChanged();
+        }
+        uploadBoxClicked = false;
     }
-    uploadBoxClicked = false;
-}
 
     private async Task TriggerFileInput()
     {
@@ -230,7 +230,7 @@
         showSuccessMessage = false;
         StateHasChanged();
 
-        var uploadTasks = e.GetMultipleFiles().Select(file =>
+        var uploadTasks = e.GetMultipleFiles(50).Select(file =>
         {
             var fileState = new FileUploadState { File = file, Progress = 0 };
             fileUploadStates.Add(fileState);
@@ -297,7 +297,7 @@
 
     private string GetBlobUri(string blobName)
     {
-        string containerUri = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest/";
+        string containerUri = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest1/";
         return containerUri + blobName;
     }
 

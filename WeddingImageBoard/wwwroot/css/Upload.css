@@ -28,7 +28,7 @@
     .upload-popup::before {
         margin-top: 5%;
         content: '';
-        background: url('./pictures/upload.png') no-repeat center top;
+        background: url('../pictures/upload.png') no-repeat center top;
         background-size: contain;
         width: 120px;
         height: 120px;
