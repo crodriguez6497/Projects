@@ -146,13 +146,18 @@ namespace TestingSAS
             var visionClient = new ComputerVisionClient(credentials) { Endpoint = "https://weddingwebsiteaiservice.cognitiveservices.azure.com/" };
 
             // put our image into memory stream
-            var thumbnailStream = await visionClient.GenerateThumbnailInStreamAsync(800, 800, myBlob, true);
+            System.IO.Stream thumbnailStream = new System.IO.MemoryStream();
+            // put our image into memory stream
+            if (myBlob.Length < 4_000_000)
+            {
+                thumbnailStream = await visionClient.GenerateThumbnailInStreamAsync(800, 800, myBlob, true);//new MemoryStream(memoryStream.ToArray()), true);
+            }
 
             // add to thumbnail container
             string thumbnailBlobName = Guid.NewGuid().ToString();            
             BlobClient blobClient = new BlobClient(connectionString, "thumbnail-imagestest1", thumbnailBlobName);
 
-            await blobClient.UploadAsync(thumbnailStream, true);
+            await blobClient.UploadAsync(myBlob.Length < 4_000_000 ? thumbnailStream : myBlob, true);
 
             // add to table
             // Create an instance of the table entity
