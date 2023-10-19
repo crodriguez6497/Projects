@@ -65,6 +65,7 @@
       "System.IO.Pipelines.dll": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
       "System.Memory.Data.dll": "sha256-KTyl2GNY+yzgDaAsY+78s0Ron8DGNrYcl8PxsVqAqlE=",
       "System.Security.Cryptography.ProtectedData.dll": "sha256-hgT40uPpMnELY0cwspokXIls6t\/WSmIAHlgukXFTLxM=",
+      "Microsoft.WindowsAzure.Storage.dll": "sha256-jb6ZNhItiSw+a2S2A4ABPUBWS1iT8b\/hliFez\/8K7P8=",
       "Microsoft.CSharp.dll": "sha256-Gvu0ys3sPcXXThnuUy8Z3\/uWnOTZ3pUq4N8YecQxUkg=",
       "Microsoft.VisualBasic.Core.dll": "sha256-NgHi32oNWYqlx3qh9Ymr25vNbGYqSUHO97hvnaMjAmI=",
       "Microsoft.VisualBasic.dll": "sha256-pOqZggfsMgKLFmdVM4cfSI+VyZvmvHt9ty4xl41wGbs=",
@@ -233,13 +234,13 @@
       "mscorlib.dll": "sha256-X+o60j6cZnlI2vFFjdH81yYTAxx13\/wqnNSWTKbDsyw=",
       "netstandard.dll": "sha256-Cr6slBs\/R2v2t\/vecFDHbQHakbEhar0adYu0YemwiXI=",
       "System.Private.CoreLib.dll": "sha256-dDw5nzGJhW1jOjGfSJcs\/Mi4KQ+DZygXnoK+vJ+jHyk=",
-      "WeddingImageBoard.dll": "sha256-EuCk8S1KzuFQMo8S9R8732ek2KdGLpWlmqd4\/f9puxg="
+      "WeddingImageBoard.dll": "sha256-Yxb0iqDgEQWmuKCQ8NTEzLexHESaa8pbvRD0fliCwcY="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "WeddingImageBoard.pdb": "sha256-fQIIqQW8zCBrCnZiyelCgWrnwPX7aECkhGzu82pV4fI="
+      "WeddingImageBoard.pdb": "sha256-Y9kto1gROoxbb35NHGdkcPn1WdN8GMAw9QfpdiNP9UM="
     },
     "runtime": {
       "dotnet.7.0.11.92hl276278.js": "sha256-RtIVigdAD1mUvR4pxoKyD8kcQgw4INP81v+PVSqkeQY=",

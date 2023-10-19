@@ -84,6 +84,10 @@
             "Quick.AspNetCore.Components.Web.Extensions": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "WindowsAzure.Storage": {
+              "target": "Package",
+              "version": "[9.3.3, )"
             }
           },
           "imports": [

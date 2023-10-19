@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gzbPOprf49kWcfY1pM5vYYHkg+WXbS10NitXFjshjEU=",
+  "Hash": "5dwrO9gwU9tJszfbXCw2rLOxgTGfryq+g01BdV94/7g=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.11\\runtimes\\browser-wasm\\lib\\net7.0\\Microsoft.Win32.Registry.dll"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.WindowsAzure.Storage.dll",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.WindowsAzure.Storage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\.nuget\\packages\\windowsazure.storage\\9.3.3\\lib\\netstandard1.3\\Microsoft.WindowsAzure.Storage.dll"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\mscorlib.dll",
@@ -6885,6 +6902,23 @@
       "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\System.Formats.Tar.dll"
     },
     {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\rPDL5Aur.gz",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.WindowsAzure.Storage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.WindowsAzure.Storage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\bin\\Release\\net7.0\\wwwroot\\_framework\\Microsoft.WindowsAzure.Storage.dll"
+    },
+    {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\obj\\Release\\net7.0\\build-gz\\RRob2WHc.gz",
       "SourceId": "WeddingImageBoard",
       "SourceType": "Computed",
@@ -8481,6 +8515,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\Breezeblocks.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\icon-192.png",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "icon-192.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",

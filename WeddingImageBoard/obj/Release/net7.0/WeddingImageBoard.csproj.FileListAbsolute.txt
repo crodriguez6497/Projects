@@ -965,3 +965,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\refint\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\ref\WeddingImageBoard.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.WindowsAzure.Storage.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\rPDL5Aur.gz

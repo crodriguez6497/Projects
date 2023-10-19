@@ -11,7 +11,9 @@
 @using System.Threading;
 @using System.Threading.Tasks;
 @using Microsoft.Extensions.Configuration;
+@using Newtonsoft.Json;
 @using WeddingImageBoard.InfiniteScrolling
+@using WeddingWebsiteThumbnailFunction;
 
 @inject NavigationManager NavManager
 @inject IConfiguration config
@@ -98,28 +100,28 @@
         <link rel="stylesheet" href="css/GalleryContainer.css" />
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
-                <ItemTemplate Context="blobWithMetadata">
+                <ItemTemplate Context="myTableEntity">
                     <div class="photo">
-                        <img src="@GetBlobUri(blobWithMetadata.BlobItem.Name)"
-                             alt="@blobWithMetadata.BlobItem.Name"
+                        <img src="@myTableEntity.thumbnailUrl"
+                             alt="@myTableEntity.name"
                              loading="lazy"
-                        @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))" />
-                        @foreach (var metadata in blobWithMetadata.Metadata)
-                        {
-                            <div class="text-content">@metadata.Value</div>
-                        }
+                        @onclick="() => OpenImagePopup(myTableEntity.fullSizeUrl)" />
+                        <div class="text-content">@myTableEntity.name</div>
                     </div>
                 </ItemTemplate>
                 <LoadingTemplate>
-                    <div class="loading">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    @if (!hasMoreItems)
+                    {
+                        <div class="loading">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    }
                 </LoadingTemplate>
             </InfiniteScrolling>
         </div>
@@ -144,8 +146,8 @@
     private string photoName = "";
     private string popupImageUrl = null;
     private InputFile inputFile;
-    private List<BlobWithMetadata> blobItems = new List<BlobWithMetadata>();
-    private List<BlobWithMetadata> displayedItems = new List<BlobWithMetadata>();
+    private List<MyTableEntity> blobItems = new List<MyTableEntity>();
+    private List<MyTableEntity> displayedItems = new List<MyTableEntity>();
     private List<FileUploadState> fileUploadStates = new List<FileUploadState>();
 
     private async Task<Uri> GetUploadSasUriFromFunction()
@@ -355,32 +357,44 @@
         public DateTimeOffset? CreationTime { get; set; }
     }
 
-    private async Task<IEnumerable<BlobWithMetadata>> GetBlobItemsInChunks(InfiniteScrollingItemsProviderRequest request)
+    private async Task<IEnumerable<MyTableEntity>> GetBlobItemsInChunks(InfiniteScrollingItemsProviderRequest request)
     {
-        var sasUri = await GetBrowseSasUriFromFunction();
-        BlobContainerClient containerClient = new BlobContainerClient(sasUri);
-        var allBlobItems = new List<BlobWithMetadata>();
-
-        int pageSize = 15;
-        var blobResults = containerClient.GetBlobsAsync(BlobTraits.Metadata, BlobStates.All);
-
-        var tasks = new List<Task<BlobWithMetadata>>();
-        await foreach (BlobItem blobItem in blobResults)
+        try
         {
-            tasks.Add(FetchBlobMetadata(containerClient, blobItem));
+            List<MyTableEntity> allTableItems = new List<MyTableEntity>();
+
+            // amount of items for the page
+            int pageSize = 15;
+
+            // get page results from your API
+            string query = $"https://weddingwebsitefunctions.azurewebsites.net/api/TableQuery?page={currentPage}&size={pageSize}&order=desc";
+            using HttpClient client = new HttpClient();
+            var response = await client.GetStringAsync(query);
+            var ourJson = JsonConvert.DeserializeObject<List<string>>(response);
+
+            foreach (var item in ourJson)
+            {
+                allTableItems.Add(JsonConvert.DeserializeObject<MyTableEntity>(item));
+            }
+
+            // If there are no more items to load, set hasMoreItems to false
+            if (ourJson.Count == 0)
+            {
+                hasMoreItems = false;
+            }
+
+            currentPage++;
+            return allTableItems;
         }
-
-        var results = await Task.WhenAll(tasks);
-        allBlobItems.AddRange(results);
-
-        // Sort all blob items by creation time
-        allBlobItems = allBlobItems.OrderByDescending(b => b.CreationTime).ToList();
-
-        int startIndex = request.StartIndex;
-        int endIndex = Math.Min(startIndex + pageSize, allBlobItems.Count);
-
-        return allBlobItems.Skip(startIndex).Take(endIndex - startIndex);
+        catch (Exception ex)
+        {
+            // Handle exceptions if necessary
+            // Log or display an error message
+            Console.WriteLine("You have reached the end of the image list.");
+            return Enumerable.Empty<MyTableEntity>();
+        }
     }
+
 
     private async Task<BlobWithMetadata> FetchBlobMetadata(BlobContainerClient containerClient, BlobItem blobItem)
     {
@@ -397,8 +411,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var request = new InfiniteScrollingItemsProviderRequest(0, CancellationToken.None); // Initialize with appropriate values
-        await LoadItemsAsync(request);
+        //var request = new InfiniteScrollingItemsProviderRequest(0, CancellationToken.None); // Initialize with appropriate values
+        await LoadItemsAsync();
     }
 
     private async ValueTask OnScroll()
@@ -406,21 +420,21 @@
         if (!isLoading && hasMoreItems)
         {
             // Calculate the new start index
-            int startIndex = displayedItems.Count;
+            //int startIndex = displayedItems.Count;
 
             // Create a new request with the start index and page size
-            var request = new InfiniteScrollingItemsProviderRequest(startIndex, CancellationToken.None);
+            //var request = new InfiniteScrollingItemsProviderRequest(1, CancellationToken.None);
 
-            await LoadItemsAsync(request);
+            await LoadItemsAsync();
         }
     }
 
-    private async Task LoadItemsAsync(InfiniteScrollingItemsProviderRequest request)
+    private async Task LoadItemsAsync()//InfiniteScrollingItemsProviderRequest request)
     {
         if (!isLoading && hasMoreItems)
         {
             isLoading = true;
-            var newItems = await GetBlobItemsInChunks(request);
+            var newItems = await GetBlobItemsInChunks(new InfiniteScrollingItemsProviderRequest(1, CancellationToken.None));
             isLoading = false;
 
             if (newItems.Any())
