@@ -2,6 +2,7 @@
 @using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
+@using Azure.Storage.Blobs.Specialized;
 @using Microsoft.AspNetCore.Components.Forms;
 @using Microsoft.AspNetCore.Components.Web.Extensions;
 @using System.Collections.Generic;
@@ -12,6 +13,7 @@
 @using System.Threading.Tasks;
 @using Microsoft.Extensions.Configuration;
 @using Newtonsoft.Json;
+@using System.Text;
 @using WeddingImageBoard.InfiniteScrolling
 @using WeddingWebsiteThumbnailFunction;
 
@@ -260,11 +262,20 @@
             showSuccessMessage = false;
 
             var uploadTasks = selectedFiles.Select(file =>
-            {
-                var fileState = new FileUploadState { File = file, Progress = 0 };
-                fileUploadStates.Add(fileState);
-                return UploadPhotoAsync(fileState);
-            }).ToList();
+    {
+    var fileState = new FileUploadState { File = file, Progress = 0 };
+    fileUploadStates.Add(fileState);
+
+    if (file.Size > 4 * 1024 * 1024) // Check if the file is larger than 4MB
+    {
+            return UploadLargeFileDirectlyAsync(file, fileState); // Use the new method for large files
+    }
+    else
+    {
+        return UploadPhotoAsync(fileState); // Use the existing method for smaller files
+    }
+    }).ToList();
+
 
             await Task.WhenAll(uploadTasks);
             fileUploadStates.Clear();
@@ -286,6 +297,61 @@
         {
             errorMessage = $"An unexpected error occurred: {ex.Message}";
             StateHasChanged();
+        }
+    }
+
+    async Task UploadLargeFileDirectlyAsync(IBrowserFile file, FileUploadState fileState)
+    {
+        try
+        {
+            // Retrieve a new SAS URI for the blob (assuming it remains the same for all chunks)
+            Uri sasUri = await GetUploadSasUriFromFunction();
+
+            // Create a BlockBlobClient with the SAS URI
+            BlockBlobClient sasBlobClient = new BlockBlobClient(sasUri);
+
+            const int chunkSize = 2 * 1024 * 1024; // 2 MB chunks
+            byte[] buffer = new byte[chunkSize];
+
+            long fileSize = file.Size;
+            long offset = 0;
+            var fileStream = file.OpenReadStream(maxAllowedSize: fileSize);
+
+            List<string> blockIds = new List<string>(); // Maintain a list of block IDs
+
+            while (offset < fileSize)
+            {
+                // Generate a unique block ID (e.g., using a predefined scheme)
+                string blockId = $"block{offset / chunkSize:D6}";
+
+                // Encode the blockId to base64
+                string base64BlockId = Convert.ToBase64String(Encoding.UTF8.GetBytes(blockId));
+
+                int bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
+
+                using (MemoryStream chunkStream = new MemoryStream(buffer, 0, bytesRead))
+                {
+                    // Stage the block for upload
+                    await sasBlobClient.StageBlockAsync(base64BlockId, chunkStream);
+                }
+
+                blockIds.Add(base64BlockId); // Add the block ID to the list
+                offset += bytesRead;
+
+                fileState.Progress = (int)(100.0 * offset / fileSize);
+                StateHasChanged();
+            }
+
+            // Commit the blocks to finalize the blob
+            await sasBlobClient.CommitBlockListAsync(blockIds); // Pass the list of block IDs
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions here (e.g., log or display an error message)
+            errorMessage = "An error occurred while uploading. Please try again.";
+            StateHasChanged();
+            // Log or print the exception for debugging
+            Console.WriteLine(ex.ToString());
         }
     }
 
