@@ -101,10 +101,6 @@
       "PackagePath": "staticwebassets\\fonts\\Breezeblocks.ttf"
     },
     {
-      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\icon-192.png",
-      "PackagePath": "staticwebassets\\icon-192.png"
-    },
-    {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
@@ -135,6 +131,10 @@
     {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\honeymoon.png",
       "PackagePath": "staticwebassets\\pictures\\honeymoon.png"
+    },
+    {
+      "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\icon-192.png",
+      "PackagePath": "staticwebassets\\pictures\\icon-192.png"
     },
     {
       "Id": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\pictures\\upload.png",
