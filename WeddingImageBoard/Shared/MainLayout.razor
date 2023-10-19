@@ -266,7 +266,7 @@
     var fileState = new FileUploadState { File = file, Progress = 0 };
     fileUploadStates.Add(fileState);
 
-    if (file.Size > 4 * 1024 * 1024) // Check if the file is larger than 4MB
+    if (file.Size > 4 * 1024 * 1024) // Check if the file is under/over than 4MB
     {
             return UploadLargeFileDirectlyAsync(file, fileState); // Use the new method for large files
     }
