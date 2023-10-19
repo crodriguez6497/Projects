@@ -78,13 +78,12 @@ namespace TestingSAS
             return new OkObjectResult(sasUri);
         }
 
-        [FunctionName("QueryTable")]
-        public static async Task<IActionResult> Run(
-           [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-                ILogger log)
+        [FunctionName("TableQuery")]
+        public static IActionResult TableQuery(
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
+            string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
             // optional variables
             string order = req.Query.ContainsKey("order") ? req.Query["order"] : "asc";
             int page;
@@ -94,7 +93,6 @@ namespace TestingSAS
             if (!int.TryParse(req.Query["page"], out page)) { page = 1; };
             if (!int.TryParse(req.Query["size"], out size)) { size = int.MaxValue; }
 
-            string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
             // connect to table
             var client = new TableServiceClient(connectionString);
             var tableClient = client.GetTableClient("weddingphotostabletest1");
@@ -104,7 +102,7 @@ namespace TestingSAS
 
             // gets the page were looking for
             int recordsToSkip = (page - 1) * size;
-            var correctPage = entities.Skip(recordsToSkip).Take(size).OrderBy((x) => order.ToLower() == "dsc" ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).ToList();
+            var correctPage = entities.Skip(recordsToSkip).Take(size).OrderBy((x) => string.Equals(order, "desc", StringComparison.CurrentCultureIgnoreCase) ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).ToList();
 
             var jsonList = new List<string>();
 
