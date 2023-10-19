@@ -117,6 +117,12 @@
         margin-top: 10px;
     }
 
+    .upload-error-message {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+    }
+
 
 @media screen and (max-width: 768px) {
     .upload-popup {
