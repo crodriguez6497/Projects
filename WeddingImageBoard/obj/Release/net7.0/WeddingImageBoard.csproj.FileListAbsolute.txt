@@ -65,6 +65,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\ww
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.VisualBasic.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\mscorlib.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\netstandard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
@@ -401,6 +402,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\ww
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.IO.Pipes.AccessControl.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Formats.Tar.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Xml.XDocument.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Security.Principal.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Storage.Blobs.dll.gz
@@ -532,6 +534,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Sy
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.IO.Pipelines.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.Memory.Data.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.WindowsAzure.Storage.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.CSharp.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.VisualBasic.Core.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.VisualBasic.dll
@@ -771,6 +774,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\bu
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\qJ1G8f12.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\zN+YCpCe.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\iitX7Mzt.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\rPDL5Aur.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\If6B+Olf.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\6ljaXBJp.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\4eomiOMF.gz
@@ -965,7 +969,3 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\refint\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\ref\WeddingImageBoard.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Microsoft.WindowsAzure.Storage.dll.gz
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Microsoft.WindowsAzure.Storage.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\rPDL5Aur.gz

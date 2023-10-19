@@ -44,7 +44,7 @@ namespace TestingSAS
             };
             sasBuilder.StartsOn = DateTimeOffset.UtcNow;
             sasBuilder.ExpiresOn = DateTimeOffset.UtcNow.AddHours(1);
-            sasBuilder.SetPermissions(BlobSasPermissions.Write);
+            sasBuilder.SetPermissions(BlobSasPermissions.Read | BlobSasPermissions.Write | BlobSasPermissions.List | BlobSasPermissions.Create);
 
             Uri sasUri = blobClient.GenerateSasUri(sasBuilder);
 
@@ -146,7 +146,7 @@ namespace TestingSAS
             var visionClient = new ComputerVisionClient(credentials) { Endpoint = "https://weddingwebsiteaiservice.cognitiveservices.azure.com/" };
 
             // put our image into memory stream
-            var thumbnailStream = await visionClient.GenerateThumbnailInStreamAsync(800, 800, myBlob, true);//new MemoryStream(memoryStream.ToArray()), true);
+            var thumbnailStream = await visionClient.GenerateThumbnailInStreamAsync(800, 800, myBlob, true);
 
             // add to thumbnail container
             string thumbnailBlobName = Guid.NewGuid().ToString();            
