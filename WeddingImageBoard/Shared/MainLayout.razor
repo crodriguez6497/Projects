@@ -17,6 +17,7 @@
 @inject IConfiguration config
 @inject IJSRuntime JSRuntime
 @inject HttpClient Http
+
 @inherits LayoutComponentBase
 
 @if (showUploadPopup)
@@ -24,25 +25,22 @@
     <link rel="stylesheet" href="css/Upload.css" />
     <div class="full-screen-flex" @onclick="CloseUploadPopup">
         <div class="upload-popup" @onclick="UploadBoxClicked">
-
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
-
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
             <h3>Please limit upload to a maximum of 50 images</h3>
             <InputFile @ref="inputFile" MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
-
             <div class="file-upload-scroll-container">
                 @foreach (var fileState in fileUploadStates)
                 {
                     <div class="file-upload-item">
                         <span class="file-name">@fileState.File.Name</span>
                         <div class="upload-progress-container">
-                            <div class="upload-progress" style="width:@(fileState.Progress + "%")"></div>
+                            <div class="upload-progress" style="width:@(fileState.Progress + "%")">
+                            </div>
                         </div>
                     </div>
                 }
             </div>
-
             @if (!string.IsNullOrEmpty(errorMessage))
             {
                 <div class="upload-error-message" style="display:block;">
@@ -55,15 +53,9 @@
                     Upload Successful!
                 </div>
             }
-
         </div>
     </div>
 }
-
-
-
-
-
 
 @if (showImagePopup)
 {
@@ -74,7 +66,6 @@
         </div>
     </div>
 }
-
 
 <div class="background-col">
     <div class="main-container">
@@ -88,9 +79,7 @@
                 </div>
             </div>
         </div>
-
         <div class="border-line"> </div>
-
         <link rel="stylesheet" href="css/TabContainer.css" />
         <div class="tabs-container">
             <div class="tab active" @onclick="ShowGallery">
@@ -106,7 +95,6 @@
                 Honeymoon Fund
             </div>
         </div>
-
         <link rel="stylesheet" href="css/GalleryContainer.css" />
         <div class="gallery-container">
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
@@ -116,14 +104,12 @@
                              alt="@blobWithMetadata.BlobItem.Name"
                              loading="lazy"
                         @onclick="() => OpenImagePopup(GetBlobUri(blobWithMetadata.BlobItem.Name))" />
-
                         @foreach (var metadata in blobWithMetadata.Metadata)
                         {
                             <div class="text-content">@metadata.Value</div>
                         }
                     </div>
                 </ItemTemplate>
-
                 <LoadingTemplate>
                     <div class="loading">
                         <span></span>
@@ -135,16 +121,12 @@
                         <span></span>
                     </div>
                 </LoadingTemplate>
-
             </InfiniteScrolling>
         </div>
     </div>
 </div>
 
-
-
 @code {
-
     private bool showProgressBar = false;
     private bool showSuccessMessage = false;
     private bool showUploadPopup = false;
@@ -229,7 +211,6 @@
         uploadBoxClicked = false;
     }
 
-
     private async Task TriggerFileInput()
     {
         await JSRuntime.InvokeVoidAsync("triggerFilePicker");
@@ -305,7 +286,6 @@
         }
     }
 
-
     private async Task UploadPhotoAsync(FileUploadState fileState)
     {
         var file = fileState.File;
@@ -346,7 +326,6 @@
             StateHasChanged();
         }
     }
-
 
     private void UpdateProgress(FileUploadState fileState, long bytesTransferred, long totalBytes)
     {

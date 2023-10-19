@@ -1,4 +1,5 @@
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Core.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Data.Tables.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Identity.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Security.KeyVault.Secrets.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Storage.Blobs.dll
@@ -394,6 +395,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\ww
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Web.HttpUtility.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.IO.Pipelines.dll.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Data.Tables.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Identity.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Net.WebClient.dll.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.dll.gz
@@ -473,6 +475,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Core.dll
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Data.Tables.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Identity.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Security.KeyVault.Secrets.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Storage.Blobs.dll
@@ -711,6 +714,7 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.csproj.CoreCompileInputs.cache
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\TSbgD5J6.gz
+C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\Qk5rjjet.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\qOqDJGNV.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\zjrW5MH2.gz
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\rvf4rIGh.gz
@@ -961,7 +965,3 @@ C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\We
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\refint\WeddingImageBoard.dll
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\WeddingImageBoard.pdb
 C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\ref\WeddingImageBoard.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Data.Tables.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\wwwroot\_framework\Azure.Data.Tables.dll.gz
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\bin\Release\net7.0\Azure.Data.Tables.dll
-C:\Users\crodr\Documents\GitHub\Projects\WeddingImageBoard\obj\Release\net7.0\build-gz\Qk5rjjet.gz
