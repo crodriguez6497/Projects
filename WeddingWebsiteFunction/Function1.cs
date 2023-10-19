@@ -102,7 +102,7 @@ namespace TestingSAS
 
             // gets the page were looking for
             int recordsToSkip = (page - 1) * size;
-            var correctPage = entities.Skip(recordsToSkip).Take(size).OrderBy((x) => string.Equals(order, "desc", StringComparison.CurrentCultureIgnoreCase) ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).ToList();
+            var correctPage = entities.OrderBy((x) => order.ToLower() == "desc" ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).Skip(recordsToSkip).Take(size).ToList();
 
             var jsonList = new List<string>();
 
@@ -132,7 +132,7 @@ namespace TestingSAS
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
             string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
-            string originalBlobUrl = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest/" + name;
+            string originalBlobUrl = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest1/" + name;
 
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainertest1");

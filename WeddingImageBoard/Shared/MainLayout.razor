@@ -310,7 +310,7 @@
     {
         var file = fileState.File;
         var buffer = new byte[file.Size];
-        await file.OpenReadStream(maxAllowedSize: 1024 * 500000).ReadAsync(buffer);
+        await file.OpenReadStream(maxAllowedSize: 1024 * 1024 * 500).ReadAsync(buffer);
 
         string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
         Uri sasUri = await GetUploadSasUriFromFunction();

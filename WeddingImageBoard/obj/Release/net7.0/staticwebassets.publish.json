@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vs5uSiw7xILf4gBspJjhO3iIvzVWpVNWreczXtcG1Z4=",
+  "Hash": "7yfyShGUrJXPmqQeJPCyhItmiPwp6BNKehOUUejY79c=",
   "Source": "WeddingImageBoard",
   "BasePath": "/",
   "Mode": "Root",
@@ -7495,6 +7495,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\Breezeblocks.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\icon-192.png",
+      "SourceId": "WeddingImageBoard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "icon-192.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
       "Identity": "C:\\Users\\crodr\\Documents\\GitHub\\Projects\\WeddingImageBoard\\wwwroot\\index.html",
