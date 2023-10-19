@@ -31,8 +31,7 @@
         <div class="upload-popup" @onclick="UploadBoxClicked">
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
-            <h3>Maximum file size: 4MB</h3>
-            <h4>Maximum images per upload: 50</h4>
+            <h3>Maximum images per upload: 50</h3>
             <InputFile @ref="inputFile" MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
             <div class="file-upload-scroll-container">
                 @foreach (var fileState in fileUploadStates)
