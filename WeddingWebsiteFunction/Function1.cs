@@ -78,12 +78,59 @@ namespace TestingSAS
             return new OkObjectResult(sasUri);
         }
 
+        [FunctionName("QueryTable")]
+        public static async Task<IActionResult> Run(
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+                ILogger log)
+        {
+            log.LogInformation("C# HTTP trigger function processed a request.");
+
+            // optional variables
+            string order = req.Query.ContainsKey("order") ? req.Query["order"] : "asc";
+            int page;
+            int size;
+
+            // check for page and size, if not passed gets all
+            if (!int.TryParse(req.Query["page"], out page)) { page = 1; };
+            if (!int.TryParse(req.Query["size"], out size)) { size = int.MaxValue; }
+
+            string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
+            // connect to table
+            var client = new TableServiceClient(connectionString);
+            var tableClient = client.GetTableClient("weddingphotostabletest1");
+
+            // queries table
+            var entities = tableClient.Query<Azure.Data.Tables.TableEntity>();
+
+            // gets the page were looking for
+            int recordsToSkip = (page - 1) * size;
+            var correctPage = entities.Skip(recordsToSkip).Take(size).OrderBy((x) => order.ToLower() == "dsc" ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).ToList();
+
+            var jsonList = new List<string>();
+
+            // this foreach is the overinformed object, convert to the object we want
+            foreach (var record in correctPage)
+            {
+
+                jsonList.Add(JsonConvert.SerializeObject(new MyTableEntity()
+                {
+                    PartitionKey = (string)record["PartitionKey"],
+                    RowKey = (string)record["RowKey"],
+                    fullSizeUrl = (string)record["fullSizeUrl"],
+                    thumbnailUrl = (string)record["thumbnailUrl"],
+                    name = (string)record["name"]
+                }));
+
+            }
+
+            return jsonList.Count < 1 ? new NoContentResult() : new OkObjectResult(jsonList);
+        }
 
         //Thumnail and table query
 
         [FunctionName("TableAndThumnail")]
         [return: Microsoft.Azure.WebJobs.Table("weddingphotostabletest1")]
-        public static async Task<MyTableEntity> Run([BlobTrigger("weddingphotoscontainertest/{name}", Connection = "StorageConnectionString")] Stream myBlob, string name, ILogger log)
+        public static async Task<MyTableEntity> Run([BlobTrigger("weddingphotoscontainertest1/{name}", Connection = "StorageConnectionString")] Stream myBlob, string name, ILogger log)
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
             string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
@@ -121,53 +168,6 @@ namespace TestingSAS
             };
 
             return tableEntity;
-        }
-
-        [FunctionName("QueryTable")]
-        public static async Task<IActionResult> Run(
-           [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-           ILogger log)
-        {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            // optional variables
-            string order = req.Query.ContainsKey("order") ? req.Query["order"] : "asc";
-            int page;
-            int size;
-
-            // check for page and size, if not passed gets all
-            if (!int.TryParse(req.Query["page"], out page)) { page = 1; };
-            if (!int.TryParse(req.Query["size"], out size)) { size = int.MaxValue; }
-
-            // connect to table
-            var client = new TableServiceClient("StorageConnectionString");
-            var tableClient = client.GetTableClient("weddingphotostabletest1");
-
-            // queries table
-            var entities = tableClient.Query<Azure.Data.Tables.TableEntity>();
-
-            // gets the page were looking for
-            int recordsToSkip = (page - 1) * size;
-            var correctPage = entities.Skip(recordsToSkip).Take(size).OrderBy((x) => order.ToLower() == "dsc" ? -Int64.Parse((string)x["PartitionKey"]) : Int64.Parse((string)x["PartitionKey"])).ToList();
-
-            var jsonList = new List<string>();
-
-            // this foreach is the overinformed object, convert to the object we want
-            foreach (var record in correctPage)
-            {
-
-                jsonList.Add(JsonConvert.SerializeObject(new MyTableEntity()
-                {
-                    PartitionKey = (string)record["PartitionKey"],
-                    RowKey = (string)record["RowKey"],
-                    fullSizeUrl = (string)record["fullSizeUrl"],
-                    thumbnailUrl = (string)record["thumbnailUrl"],
-                    name = (string)record["name"]
-                }));
-
-            }
-
-            return jsonList.Count < 1 ? new NoContentResult() : new OkObjectResult(jsonList);
         }
     }
 }
