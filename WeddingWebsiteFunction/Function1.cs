@@ -95,7 +95,7 @@ namespace TestingSAS
 
             // connect to table
             var client = new TableServiceClient(connectionString);
-            var tableClient = client.GetTableClient("weddingphotoscontainerlive");
+            var tableClient = client.GetTableClient("weddingphotostablelive");
 
             // queries table
             var entities = tableClient.Query<Azure.Data.Tables.TableEntity>();
