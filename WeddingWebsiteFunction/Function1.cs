@@ -28,7 +28,7 @@ namespace TestingSAS
 
             string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
 
-            string containerName = "weddingphotoscontainertest1";
+            string containerName = "weddingphotoscontainerlive";
 
             string blobName = System.Guid.NewGuid().ToString(); // Generate a new unique file name
 
@@ -59,7 +59,7 @@ namespace TestingSAS
 
             string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
 
-            string containerName = "weddingphotoscontainertest1";
+            string containerName = "weddingphotoscontainerlive";
 
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
@@ -95,7 +95,7 @@ namespace TestingSAS
 
             // connect to table
             var client = new TableServiceClient(connectionString);
-            var tableClient = client.GetTableClient("weddingphotostabletest1");
+            var tableClient = client.GetTableClient("weddingphotoscontainerlive");
 
             // queries table
             var entities = tableClient.Query<Azure.Data.Tables.TableEntity>();
@@ -127,15 +127,15 @@ namespace TestingSAS
         //Thumnail and table query
 
         [FunctionName("TableAndThumnail")]
-        [return: Microsoft.Azure.WebJobs.Table("weddingphotostabletest1")]
-        public static async Task<MyTableEntity> Run([BlobTrigger("weddingphotoscontainertest1/{name}", Connection = "StorageConnectionString")] Stream myBlob, string name, ILogger log)
+        [return: Microsoft.Azure.WebJobs.Table("weddingphotostablelive")]
+        public static async Task<MyTableEntity> Run([BlobTrigger("weddingphotoscontainerlive/{name}", Connection = "StorageConnectionString")] Stream myBlob, string name, ILogger log)
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
             string connectionString = System.Environment.GetEnvironmentVariable("StorageConnectionString");
-            string originalBlobUrl = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainertest1/" + name;
+            string originalBlobUrl = "https://weddingphotoscr.blob.core.windows.net/weddingphotoscontainerlive/" + name;
 
             BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
-            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainertest1");
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("weddingphotoscontainerlive");
             BlobClient originalBlobClient = containerClient.GetBlobClient(name);
             BlobProperties properties = originalBlobClient.GetProperties();
             string userName = properties.Metadata.ContainsKey("Name") ? properties.Metadata["Name"] : "";
@@ -155,7 +155,7 @@ namespace TestingSAS
 
             // add to thumbnail container
             string thumbnailBlobName = Guid.NewGuid().ToString();            
-            BlobClient blobClient = new BlobClient(connectionString, "thumbnail-imagestest1", thumbnailBlobName);
+            BlobClient blobClient = new BlobClient(connectionString, "thumbnail-imageslive", thumbnailBlobName);
 
             await blobClient.UploadAsync(myBlob.Length < 4_000_000 ? thumbnailStream : myBlob, true);
 
