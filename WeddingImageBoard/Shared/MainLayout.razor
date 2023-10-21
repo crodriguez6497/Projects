@@ -1,4 +1,4 @@
-﻿﻿@using System
+﻿﻿﻿@using System
 @using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
@@ -262,17 +262,17 @@
 
             var uploadTasks = selectedFiles.Select(file =>
     {
-    var fileState = new FileUploadState { File = file, Progress = 0 };
-    fileUploadStates.Add(fileState);
+        var fileState = new FileUploadState { File = file, Progress = 0 };
+        fileUploadStates.Add(fileState);
 
-    if (file.Size > 4 * 1024 * 1024) // Check if the file is under/over than 4MB
-    {
+        if (file.Size > 4 * 1024 * 1024) // Check if the file is under/over than 4MB
+        {
             return UploadLargeFileDirectlyAsync(file, fileState); // Use the new method for large files
-    }
-    else
-    {
-        return UploadPhotoAsync(fileState); // Use the existing method for smaller files
-    }
+        }
+        else
+        {
+            return UploadPhotoAsync(fileState); // Use the existing method for smaller files
+        }
     }).ToList();
 
 
@@ -309,8 +309,7 @@
             // Create a BlockBlobClient with the SAS URI
             BlockBlobClient sasBlobClient = new BlockBlobClient(sasUri);
 
-            const int chunkSize = 2 * 1024 * 1024; // 2 MB chunks
-            byte[] buffer = new byte[chunkSize];
+            const int maxChunkSize = 2 * 1024 * 1024; // 2 MB chunks
 
             long fileSize = file.Size;
             long offset = 0;
@@ -320,13 +319,16 @@
 
             while (offset < fileSize)
             {
+                int currentChunkSize = (int)Math.Min(maxChunkSize, fileSize - offset);
+                byte[] buffer = new byte[currentChunkSize];
+
                 // Generate a unique block ID (e.g., using a predefined scheme)
-                string blockId = $"block{offset / chunkSize:D6}";
+                string blockId = $"block{offset / maxChunkSize:D6}";
 
                 // Encode the blockId to base64
                 string base64BlockId = Convert.ToBase64String(Encoding.UTF8.GetBytes(blockId));
 
-                int bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
+                int bytesRead = await fileStream.ReadAsync(buffer, 0, currentChunkSize);
 
                 using (MemoryStream chunkStream = new MemoryStream(buffer, 0, bytesRead))
                 {
@@ -353,6 +355,7 @@
             Console.WriteLine(ex.ToString());
         }
     }
+
 
     private async Task UploadPhotoAsync(FileUploadState fileState)
     {
