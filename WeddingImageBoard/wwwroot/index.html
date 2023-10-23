@@ -41,26 +41,12 @@
         <a class="dismiss">🗙</a>
     </div>
     <script>
-        function triggerFilePicker() {
-            document.getElementById("fileInput").click();
-        }
-    </script>
-
-    <script>
         function updateProgressBar(value) {
             let progressBar = document.querySelector('.upload-progress');
             if (progressBar) {
                 progressBar.style.width = value + '%';
             }
         }        
-    </script>
-    <script>
-        function triggerFilePicker() {
-            let fileInput = document.getElementById('custom-file-upload');
-            if (fileInput) {
-                fileInput.click();
-            }
-        }
     </script>
     <script>
         function refreshPage() {

@@ -1,4 +1,4 @@
-﻿﻿﻿@using System
+﻿﻿﻿﻿@using System
 @using Azure.Identity;
 @using Azure.Storage.Blobs;
 @using Azure.Storage.Blobs.Models;
@@ -32,7 +32,7 @@
             <input id="photoName" type="text" @bind="photoName" placeholder="Enter your name" class="name-input-box" />
             <label for="custom-file-upload" class="custom-file-upload">Browse Files</label>
             <h3>Maximum images per upload: 50</h3>
-            <InputFile @ref="inputFile" MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
+            <InputFile MaxAcceptedFiles="50" id="custom-file-upload" class="input-file-hidden" accept="image/*" Multiple MaxMessageSize="20000000" OnChange="HandleFileSelected"></InputFile>
             <div class="file-upload-scroll-container">
                 @foreach (var fileState in fileUploadStates)
                 {
@@ -104,7 +104,7 @@
             <InfiniteScrolling ItemsProvider="GetBlobItemsInChunks">
                 <ItemTemplate Context="myTableEntity">
                     <div class="photo">
-                        <img src="@myTableEntity.thumbnailUrl"
+                        <img src="@myTableEntity.fullSizeUrl"
                              alt="@myTableEntity.name"
                              loading="lazy"
                         @onclick="() => OpenImagePopup(myTableEntity.fullSizeUrl)" />
@@ -147,7 +147,7 @@
     private string errorMessage = "";
     private string photoName = "";
     private string popupImageUrl = null;
-    private InputFile inputFile;
+    private ElementReference inputFile;
     private List<MyTableEntity> blobItems = new List<MyTableEntity>();
     private List<MyTableEntity> displayedItems = new List<MyTableEntity>();
     private List<FileUploadState> fileUploadStates = new List<FileUploadState>();
@@ -214,15 +214,56 @@
         }
         uploadBoxClicked = false;
     }
+        private async Task HandleFileSelected(InputFileChangeEventArgs e)
+        {
+            var selectedFiles = e.GetMultipleFiles(50).ToList();
 
-    private async Task TriggerFileInput()
-    {
-        await JSRuntime.InvokeVoidAsync("triggerFilePicker");
-    }
+            // Validate files for format and total size
+            if (!IsValidFiles(selectedFiles))
+            {
+                StateHasChanged();
+                return;
+            }
 
-    private async Task HandleFileSelected(InputFileChangeEventArgs e)
-    {
-        var allowedExtensions = new List<string>
+            try
+            {
+                showProgressBar = true;
+                showSuccessMessage = false;
+                foreach (var file in selectedFiles)
+                {
+                    var fileState = new FileUploadState { File = file, Progress = 0 };
+                    fileUploadStates.Add(fileState);
+                    if (file.Size > 4 * 1024 * 1024)
+                    {
+                        await UploadLargeFileDirectlyAsync(file, fileState);
+                    }
+                    else
+                    {
+                        await UploadPhotoAsync(fileState);
+                    }
+                }
+
+                fileUploadStates.Clear();
+                showSuccessMessage = true;
+                StateHasChanged();
+                await Task.Delay(3000);
+                showUploadPopup = false;
+                CloseUploadPopup();
+                showSuccessMessage = false;
+                await JSRuntime.InvokeVoidAsync("refreshPage");
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"An unexpected error occurred: {ex.Message}";
+                StateHasChanged();
+            }
+        }
+
+        private bool IsValidFiles(List<IBrowserFile> selectedFiles)
+        {
+            // Supported file extensions
+            var allowedExtensions = new List<string>
     {
         ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".tif", ".webp",
         ".heif", ".raw", ".svg", ".psd", ".ico", ".tga", ".avif", ".pict",
@@ -231,73 +272,27 @@
         ".nrw", ".orf", ".rw2", ".pef", ".dng", ".arw", ".srf", ".sr2"
     };
 
-        var selectedFiles = e.GetMultipleFiles(50).ToList();
-
-        foreach (var file in selectedFiles)
-        {
-            var extension = Path.GetExtension(file.Name).ToLower();
-
-            if (!allowedExtensions.Contains(extension))
+            foreach (var file in selectedFiles)
             {
-                errorMessage = $"File {file.Name} is not a supported image format.";
-                StateHasChanged();
-                return;
+                var extension = Path.GetExtension(file.Name).ToLower();
+
+                if (!allowedExtensions.Contains(extension))
+                {
+                    errorMessage = $"File {file.Name} is not a supported image format.";
+                    return false;
+                }
             }
-        }
 
-        try
-        {
             long totalSize = selectedFiles.Sum(f => f.Size);
-
-            // Check total size not exceeding 500MB
             if (totalSize > 500 * 1024 * 1024)
             {
                 errorMessage = "Total size of files exceeds the allowed 500MB.";
-                StateHasChanged();
-                return;
+                return false;
             }
 
-            showProgressBar = true;
-            showSuccessMessage = false;
+            return true;
+        }
 
-            var uploadTasks = selectedFiles.Select(file =>
-    {
-        var fileState = new FileUploadState { File = file, Progress = 0 };
-        fileUploadStates.Add(fileState);
-
-        if (file.Size > 4 * 1024 * 1024) // Check if the file is under/over than 4MB
-        {
-            return UploadLargeFileDirectlyAsync(file, fileState); // Use the new method for large files
-        }
-        else
-        {
-            return UploadPhotoAsync(fileState); // Use the existing method for smaller files
-        }
-    }).ToList();
-
-
-            await Task.WhenAll(uploadTasks);
-            fileUploadStates.Clear();
-            showSuccessMessage = true;
-            StateHasChanged();
-            await Task.Delay(3000);
-            showUploadPopup = false;
-            CloseUploadPopup();
-            showSuccessMessage = false;
-            await JSRuntime.InvokeVoidAsync("refreshPage");
-            StateHasChanged();
-        }
-        catch (InvalidOperationException ex)
-        {
-            errorMessage = "Too many files selected! Please select up to 50 files.";
-            StateHasChanged();
-        }
-        catch (Exception ex)
-        {
-            errorMessage = $"An unexpected error occurred: {ex.Message}";
-            StateHasChanged();
-        }
-    }
 
     async Task UploadLargeFileDirectlyAsync(IBrowserFile file, FileUploadState fileState)
     {
@@ -313,34 +308,41 @@
 
             long fileSize = file.Size;
             long offset = 0;
-            var fileStream = file.OpenReadStream(maxAllowedSize: fileSize);
+            var blockCount = 0;
 
             List<string> blockIds = new List<string>(); // Maintain a list of block IDs
 
-            while (offset < fileSize)
+            using (var fileStream = file.OpenReadStream(maxAllowedSize: fileSize))
             {
-                int currentChunkSize = (int)Math.Min(maxChunkSize, fileSize - offset);
-                byte[] buffer = new byte[currentChunkSize];
-
-                // Generate a unique block ID (e.g., using a predefined scheme)
-                string blockId = $"block{offset / maxChunkSize:D6}";
-
-                // Encode the blockId to base64
-                string base64BlockId = Convert.ToBase64String(Encoding.UTF8.GetBytes(blockId));
-
-                int bytesRead = await fileStream.ReadAsync(buffer, 0, currentChunkSize);
-
-                using (MemoryStream chunkStream = new MemoryStream(buffer, 0, bytesRead))
+                while (offset < fileSize)
                 {
-                    // Stage the block for upload
-                    await sasBlobClient.StageBlockAsync(base64BlockId, chunkStream);
+                    int currentChunkSize = (int)Math.Min(maxChunkSize, fileSize - offset);
+                    byte[] buffer = new byte[currentChunkSize];
+
+                    // Generate a unique block ID (e.g., using a predefined scheme)
+                    string blockId = $"block{blockCount:D6}";
+
+                    // Encode the blockId to base64
+                    string base64BlockId = Convert.ToBase64String(Encoding.UTF8.GetBytes(blockId));
+
+                    int bytesRead;
+                    while ((bytesRead = await fileStream.ReadAsync(buffer, 0, currentChunkSize)) > 0)
+                    {
+                        using (MemoryStream chunkStream = new MemoryStream(buffer, 0, bytesRead))
+                        {
+                            // Stage the block for upload
+                            await sasBlobClient.StageBlockAsync(base64BlockId, chunkStream);
+                        }
+
+                        blockIds.Add(base64BlockId); // Add the block ID to the list
+                        offset += bytesRead;
+
+                        fileState.Progress = (int)(100.0 * offset / fileSize);
+                        StateHasChanged();
+                    }
+
+                    blockCount++;
                 }
-
-                blockIds.Add(base64BlockId); // Add the block ID to the list
-                offset += bytesRead;
-
-                fileState.Progress = (int)(100.0 * offset / fileSize);
-                StateHasChanged();
             }
 
             // Commit the blocks to finalize the blob
@@ -349,7 +351,7 @@
         catch (Exception ex)
         {
             // Handle exceptions here (e.g., log or display an error message)
-            errorMessage = "An error occurred while uploading. Please try again.";
+            string errorMessage = "An error occurred while uploading. Please try again.";
             StateHasChanged();
             // Log or print the exception for debugging
             Console.WriteLine(ex.ToString());
@@ -357,46 +359,50 @@
     }
 
 
+
     private async Task UploadPhotoAsync(FileUploadState fileState)
     {
         var file = fileState.File;
-        var buffer = new byte[file.Size];
-        await file.OpenReadStream(maxAllowedSize: 1024 * 1024 * 500).ReadAsync(buffer);
 
-        string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
-        Uri sasUri = await GetUploadSasUriFromFunction();
-        BlobClient blobClient = new BlobClient(sasUri);
-
-        try
+        using (var memoryStream = new MemoryStream())
         {
-            using (var stream = new MemoryStream(buffer))
+            await file.OpenReadStream(maxAllowedSize: 1024 * 1024 * 500).CopyToAsync(memoryStream);
+
+            string blobName = Guid.NewGuid().ToString() + Path.GetExtension(file.Name);
+            Uri sasUri = await GetUploadSasUriFromFunction();
+            BlobClient blobClient = new BlobClient(sasUri);
+
+            try
             {
+                memoryStream.Position = 0; // Reset the memory stream's position to the beginning
+
                 var uploadOptions = new BlobUploadOptions
                     {
                         ProgressHandler = new Progress<long>(bytesTransferred =>
                         {
-                            UpdateProgress(fileState, bytesTransferred, buffer.Length);
+                            UpdateProgress(fileState, bytesTransferred, memoryStream.Length);
                         })
                     };
 
-                await blobClient.UploadAsync(stream, uploadOptions);
-            }
+                await blobClient.UploadAsync(memoryStream, uploadOptions);
 
-            // Store the entered name as metadata
-            var metadata = new Dictionary<string, string>
-        {
-            {"Name", photoName}
-        };
-            await blobClient.SetMetadataAsync(metadata);
-            fileState.Progress = 100;
-            StateHasChanged();
-        }
-        catch (Exception ex)
-        {
-            errorMessage = "An error occurred while uploading. Please try again.";
-            StateHasChanged();
+                // Store the entered name as metadata
+                var metadata = new Dictionary<string, string>
+            {
+                {"Name", photoName}
+            };
+                await blobClient.SetMetadataAsync(metadata);
+                fileState.Progress = 100;
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                errorMessage = "An error occurred while uploading. Please try again.";
+                StateHasChanged();
+            }
         }
     }
+
 
     private void UpdateProgress(FileUploadState fileState, long bytesTransferred, long totalBytes)
     {
